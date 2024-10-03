@@ -17,7 +17,7 @@ const Header = () => {
             <li>
               <a
                 href="#home"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-11"
+                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Accueil"
               >
                 Accueil
@@ -26,7 +26,7 @@ const Header = () => {
             <li>
               <a
                 href="#about"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-11"
+                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="À propos"
               >
                 À propos
@@ -35,7 +35,7 @@ const Header = () => {
             <li>
               <a
                 href="#projects"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-11"
+                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Projets"
               >
                 Projets
@@ -44,7 +44,7 @@ const Header = () => {
             <li>
               <a
                 href="#skills"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-11"
+                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Compétences"
               >
                 Compétences
@@ -53,7 +53,7 @@ const Header = () => {
             <li>
               <a
                 href="#contact"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-11"
+                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Contact"
               >
                 Contact
