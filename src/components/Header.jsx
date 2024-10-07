@@ -1,8 +1,8 @@
-// import "./header.css"; // Assurez-vous de créer un fichier CSS pour styliser votre header
+import Button from "./Button";
 
 const Header = () => {
   return (
-    <header className="w-full bg-auto  shadow-md" role="banner">
+    <header className="w-full bg-auto shadow-md" role="banner">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
@@ -11,8 +11,12 @@ const Header = () => {
         >
           Julien Medina
         </div>
-        {/* Navigation à droite */}
-        <nav aria-label="Main Navigation">
+
+        {/* Navigation au centre */}
+        <nav
+          aria-label="Main Navigation"
+          className="hidden grow justify-center md:flex"
+        >
           <ul className="flex space-x-4">
             <li>
               <a
@@ -47,20 +51,18 @@ const Header = () => {
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Compétences"
               >
-                /skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="font-mono text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
-                aria-label="Contact"
-              >
-                /Contact me
+                /Skills
               </a>
             </li>
           </ul>
         </nav>
+
+        {/* Bouton "Work with me" à droite */}
+        <div className="ml-4">
+          <Button href="#contact" ariaLabel="Contacter Julien Medina">
+            /Contact me
+          </Button>
+        </div>
       </div>
     </header>
   );

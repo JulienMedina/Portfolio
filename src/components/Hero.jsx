@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Button from "./Button";
+import DiagonalLinesSVG from "../assets/Group.svg";
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -14,23 +16,26 @@ const Hero = () => {
         loaded ? "opacity-100" : "opacity-0"
       }`}
     >
+      {/* SVG décoratif */}
+      <img
+        src={DiagonalLinesSVG}
+        alt="Lignes diagonales décoratives"
+        className="absolute left-0 top-0 ml-4 mt-4"
+      />
       {/* Titre principal */}
-      <h1 className="mb-4 text-center text-4xl font-bold text-grayDark-11 md:text-6xl">
+      <h1 className="mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl">
         Full stack web developer
       </h1>
 
       {/* Accroche */}
-      <p className="mb-6 text-center text-lg text-grayDark-9 md:text-2xl">
+      <p className="mb-6 text-center font-mono text-lg text-grayDark-9 md:text-2xl">
         based in Paris, France
       </p>
 
       {/* Bouton d'appel à l'action */}
-      <a
-        href="#projects"
-        className="rounded-none border border-grayDark-6 bg-grayDark-9 px-6 py-2 text-grayDark-12 transition-colors duration-300 hover:bg-grayDark-7"
-      >
-        /work with me
-      </a>
+      <Button href="#contact" ariaLabel="Contacter Julien Medina">
+        /Work with me
+      </Button>
     </section>
   );
 };
