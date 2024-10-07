@@ -2,14 +2,14 @@
 
 const Header = () => {
   return (
-    <header className="w-full bg-auto font-sans shadow-md" role="banner">
+    <header className="w-full bg-auto  shadow-md" role="banner">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
-          className="text-2xl font-bold text-grayDark-12"
+          className="font-mono text-2xl text-grayDark-12"
           aria-label="Initiales JM"
         >
-          JM
+          Julien Medina
         </div>
         {/* Navigation à droite */}
         <nav aria-label="Main Navigation">
@@ -17,46 +17,46 @@ const Header = () => {
             <li>
               <a
                 href="#home"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Accueil"
               >
-                Accueil
+                /Home
               </a>
             </li>
             <li>
               <a
                 href="#about"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="À propos"
               >
-                À propos
+                /About
               </a>
             </li>
             <li>
               <a
                 href="#projects"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Projets"
               >
-                Projets
+                /Works
               </a>
             </li>
             <li>
               <a
                 href="#skills"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Compétences"
               >
-                Compétences
+                /skills
               </a>
             </li>
             <li>
               <a
                 href="#contact"
-                className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-mono text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Contact"
               >
-                Contact
+                /Contact me
               </a>
             </li>
           </ul>
