@@ -7,7 +7,7 @@ import Hero from "./components/Hero"; //import About from "./components/About";
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-grayDark-1">
+    <div className="relative flex min-h-screen flex-col bg-grayDark-1">
       <Header />
       <main className="flex grow">
         <Hero className="size-full" />

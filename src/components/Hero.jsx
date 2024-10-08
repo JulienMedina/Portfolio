@@ -12,6 +12,7 @@ const Hero = () => {
 
   return (
     <section
+      aria-labelledby="hero-title" // Lien avec le titre principal
       className={`flex size-full flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
@@ -20,10 +21,13 @@ const Hero = () => {
       <img
         src={DiagonalLinesSVG}
         alt="Lignes diagonales décoratives"
-        className="absolute left-0 top-0 ml-4 mt-4"
+        className="absolute left-0 top-0 ml-4 mt-4 h-auto w-1/2 md:w-1/3 lg:w-1/4"
       />
       {/* Titre principal */}
-      <h1 className="mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl">
+      <h1
+        id="hero-title"
+        className="mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
+      >
         Full stack web developer
       </h1>
 
