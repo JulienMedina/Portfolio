@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="relative flex min-h-screen flex-col bg-grayDark-1">
       <Header />
-      <main className="flex grow">
+      <main className="flex grow pt-20">
         <Hero className="size-full" />
       </main>
       <Footer />

@@ -17,9 +17,9 @@ const Header = () => {
 
         {/* Navigation pour mobile */}
         <nav>
-          <section className="MOBILE-MENU flex lg:hidden">
+          <section className="flex lg:hidden">
             <div
-              className="BURGER-ICON space-y-2"
+              className="space-y-2"
               onClick={() => setIsNavOpen((prevState) => !prevState)}
             >
               <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -29,7 +29,8 @@ const Header = () => {
 
             {/* Menu mobile */}
             <div
-              className={`absolute top-0 left-0 h-screen w-full bg-grayDark-12 text-grayDark-1 transform transition-transform duration-300 ease-in-out ${
+              // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
+              className={`absolute left-0 top-0 h-screen w-full transform bg-grayDark-1 text-grayDark-12 transition-transform duration-300 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               }`}
             >
@@ -41,7 +42,7 @@ const Header = () => {
                   {/* Icone de fermeture */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8"
+                    className="size-8"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -89,9 +90,9 @@ const Header = () => {
         {/* Navigation pour grands écrans */}
         <nav
           aria-label="Main Navigation"
-          className="DESKTOP-MENU hidden grow justify-center lg:flex"
+          className="hidden grow justify-center lg:flex"
         >
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-10">
             <li>
               <a
                 href="#home"
@@ -132,7 +133,7 @@ const Header = () => {
         </nav>
 
         {/* Bouton "Work with me" à droite */}
-        <div className="ml-4">
+        <div className="ml-4 hidden lg:block">
           <Button href="#contact" ariaLabel="Contacter Julien Medina">
             /Contact me
           </Button>
