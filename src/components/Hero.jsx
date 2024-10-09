@@ -2,20 +2,21 @@ import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import DiagonalLinesSVG from "../assets/Group.svg";
 import Ellipse from "../assets/Ellipse.svg";
+
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
 
   // Utilisation d'un useEffect pour lancer l'animation une fois la page chargée
   useEffect(() => {
     setLoaded(true);
-    console.log("hero loaded"); // Active l'animation au chargement
   }, []);
 
   return (
     <section
       aria-labelledby="hero-title" // Lien avec le titre principal
-      className={`flex size-full flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity duration-2000
-         ease-in-out ${loaded ? "opacity-100" : "opacity-0"}`}
+      className={`duration-2000 flex size-full flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity ease-in-out ${
+        loaded ? "opacity-100" : "opacity-0"
+      }`}
     >
       {/* SVG décoratif */}
       <img
@@ -26,8 +27,7 @@ const Hero = () => {
       <img
         src={Ellipse}
         alt="Ellipse décorative"
-        // eslint-disable-next-line tailwindcss/no-unnecessary-arbitrary-value
-        className="absolute left-1/2 top-10 z-0 h-auto w-[90%] -translate-x-1/2 md:w-3/5 lg:w-[50%]"
+        className="absolute left-1/2 top-10 z-0 h-auto w-[90%] -translate-x-1/2 md:w-3/5 lg:w-1/2"
       />
 
       {/* Titre principal */}
@@ -47,7 +47,7 @@ const Hero = () => {
       <Button
         href="#contact"
         ariaLabel="Contacter Julien Medina"
-        className="z-10"
+        className="z-10 border-grayDark-6 bg-grayDark-9 px-6 py-2 font-mono text-grayDark-12 transition-all duration-300 hover:drop-shadow-glow"
       >
         /Work with me
       </Button>
