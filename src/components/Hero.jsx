@@ -14,9 +14,8 @@ const Hero = () => {
   return (
     <section
       aria-labelledby="hero-title" // Lien avec le titre principal
-      className={`flex size-full flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity duration-2000 ease-in-out ${
-        loaded ? "opacity-100" : "opacity-0"
-      }`}
+      className={`flex size-full flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity duration-2000
+         ease-in-out ${loaded ? "opacity-100" : "opacity-0"}`}
     >
       {/* SVG décoratif */}
       <img
