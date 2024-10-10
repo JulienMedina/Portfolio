@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       aria-labelledby="hero-title" // Lien avec le titre principal
-      className={`duration-2000 flex size-full flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity ease-in-out ${
+      className={`flex min-h-screen flex-col items-center justify-center bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -29,7 +29,6 @@ const Hero = () => {
         alt="Ellipse décorative"
         className="absolute left-1/2 top-10 z-0 h-auto w-[90%] -translate-x-1/2 md:w-3/5 lg:w-1/2"
       />
-
       {/* Titre principal */}
       <h1
         id="hero-title"
