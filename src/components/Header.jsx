@@ -29,12 +29,9 @@ const Header = () => {
 
             {/* Menu mobile */}
             <div
-              // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
-              className={`absolute left-0 top-0 h-screen w-full transform bg-grayDark-1 text-grayDark-12 transition-transform duration-300 ease-in-out ${
-                isNavOpen ? "translate-x-0" : "-translate-x-full"
-              }`}
+            // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
             >
-              <div className="flex justify-end p-4">
+              <div className="absolute right-0 top-0 p-4">
                 <button
                   onClick={() => setIsNavOpen(false)}
                   className="text-gray-600"
@@ -76,11 +73,6 @@ const Header = () => {
                   <a href="#skills" className="text-xl">
                     /Skills
                   </a>
-                </li>
-                <li>
-                  <Button href="#contact" ariaLabel="Contacter Julien Medina">
-                    /Contact me
-                  </Button>
                 </li>
               </ul>
             </div>
