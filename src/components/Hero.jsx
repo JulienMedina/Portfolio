@@ -46,8 +46,8 @@ const Hero = () => {
       {/* Bouton d'appel à l'action */}
       <Button
         href="#contact"
+        className="z-10"
         ariaLabel="Contacter Julien Medina"
-        className="z-10 border-grayDark-6 bg-grayDark-9 px-6 py-2 font-mono text-grayDark-12 transition-all duration-300 hover:drop-shadow-glow"
       >
         /Work with me
       </Button>
