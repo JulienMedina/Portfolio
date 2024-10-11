@@ -1,5 +1,6 @@
 import Button from "./Button";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
@@ -111,7 +112,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             </li>
             <li>
               <a
-                href="#projects"
+                href="#works"
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Projets"
               >
@@ -139,6 +140,10 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
       </div>
     </header>
   );
+};
+Header.propTypes = {
+  isNavOpen: PropTypes.bool.isRequired,
+  setIsNavOpen: PropTypes.func.isRequired,
 };
 
 export default Header;

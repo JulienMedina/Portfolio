@@ -1,39 +1,32 @@
-import React from "react";
-import ProjectCard from "./ProjectCard";
+import Card from "./Card";
 
-const Works = () => {
-  // Liste des projets que tu vas afficher
-  const projects = [
-    {
-      title: "Nom de ton projet 1",
-      description: "Description courte en anglais si tu peux",
-      link: "#",
-    },
-    {
-      title: "Nom de ton projet 2",
-      description: "Description courte en anglais",
-      link: "#",
-    },
-    // Ajoute d'autres projets ici
-  ];
-
+const Projects = () => {
   return (
-    <section className="my-8 px-4" id="works">
-      <h2 className="mb-8 text-center text-3xl font-semibold text-grayDark-12">
-        My Work
-      </h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            link={project.link}
+    <section id="works" className="min-h-screen bg-grayDark-1 text-grayDark-12">
+      <div className="container mx-auto py-12">
+        <h2 className="mb-8 text-center font-mono text-4xl font-semibold">
+          My Works
+        </h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {/* Exemple de card avec ton bouton */}
+          <Card
+            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            title="Project 1"
+            description="This is a description of Project 1."
+            buttonText="Learn More"
+            buttonLink="#"
           />
-        ))}
+          <Card
+            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            title="Project 2"
+            description="This is a description of Project 2."
+            buttonText="Learn More"
+            buttonLink="#"
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-export default Works;
+export default Projects;

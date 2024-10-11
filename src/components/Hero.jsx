@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Button from "./Button";
 import DiagonalLinesSVG from "../assets/Group.svg";
 import Ellipse from "../assets/Ellipse.svg";
@@ -58,6 +59,9 @@ const Hero = ({ isNavOpen }) => {
       </div>
     </section>
   );
+};
+Hero.propTypes = {
+  isNavOpen: PropTypes.bool.isRequired,
 };
 
 export default Hero;

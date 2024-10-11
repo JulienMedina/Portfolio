@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Button({ children, href, ariaLabel, className }) {
+export default function Button({ children, href, ariaLabel }) {
   return (
     <a
       href={href}

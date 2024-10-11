@@ -13,12 +13,7 @@ function App() {
       <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
       {/* Main content */}
-      <main
-        className="
-      
-      
-  pt-20"
-      >
+      <main className="pt-20">
         {" "}
         {/* Utiliser flex grow pour occuper tout l'espace */}
         <Hero isNavOpen={isNavOpen} />
