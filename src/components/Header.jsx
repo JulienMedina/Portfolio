@@ -1,9 +1,7 @@
 import Button from "./Button";
 import { useState } from "react";
 
-const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
+const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
     <header className="w-full bg-auto shadow-md" role="banner">
       <div className="container mx-auto flex items-center justify-between p-4">
@@ -55,7 +53,7 @@ const Header = () => {
                   </svg>
                 </button>
               </div>
-              <ul className="flex flex-col items-center space-y-4">
+              <ul className="z-10 flex flex-col items-center space-y-4">
                 <li>
                   <a href="#home" className="text-xl">
                     /Home
@@ -67,7 +65,7 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" className="text-xl">
+                  <a href="#works" className="text-xl">
                     /Works
                   </a>
                 </li>
@@ -76,6 +74,12 @@ const Header = () => {
                     /Skills
                   </a>
                 </li>
+                {/* Bouton "Contact me" dans le menu burger */}
+                <div className="mt-4">
+                  <Button href="#contact" ariaLabel="Contacter Julien Medina">
+                    /Contact me
+                  </Button>
+                </div>
               </ul>
             </div>
           </section>

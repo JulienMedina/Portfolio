@@ -19,7 +19,7 @@ const Works = () => {
 
   return (
     <section className="my-8 px-4" id="works">
-      <h2 className="mb-8 text-center text-3xl font-bold text-grayDark-12">
+      <h2 className="mb-8 text-center text-3xl font-semibold text-grayDark-12">
         My Work
       </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
