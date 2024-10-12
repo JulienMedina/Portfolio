@@ -23,7 +23,7 @@ const Hero = ({ isNavOpen }) => {
       <img
         src={DiagonalLinesSVG}
         alt="Lignes diagonales décoratives"
-        className="absolute left-0 top-0 ml-4 mt-4 h-auto w-1/2 md:w-1/3 lg:w-1/4"
+        className="absolute left-0 top-0 z-0 ml-4 mt-4 h-auto w-1/2 md:w-1/3 lg:w-1/4"
       />
       <img
         src={Ellipse}
