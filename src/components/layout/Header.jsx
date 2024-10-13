@@ -1,10 +1,10 @@
-import Button from "./Button";
+import Button from "../base/Button";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
 const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
-    <header className="w-full bg-auto shadow-md" role="banner">
+    <header className="z-10 w-full bg-auto shadow-md" role="banner">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div

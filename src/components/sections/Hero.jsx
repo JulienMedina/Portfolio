@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Button from "./Button";
-import DiagonalLinesSVG from "../assets/Group.svg";
-import Ellipse from "../assets/Ellipse.svg";
+import TypewriterComponent from "../base/Typewriter";
+import Button from "../base/Button";
+import DiagonalLinesSVG from "../../assets/Group.svg";
+import Ellipse from "../../assets/Ellipse.svg";
 
 const Hero = ({ isNavOpen }) => {
   const [loaded, setLoaded] = useState(false);
@@ -37,7 +38,7 @@ const Hero = ({ isNavOpen }) => {
           id="hero-title"
           className="z-10 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
         >
-          Full stack web developer
+          <TypewriterComponent textArray={"Full stack web developer"} />
         </h1>
 
         {/* Accroche */}
