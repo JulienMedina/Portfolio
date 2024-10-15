@@ -1,10 +1,9 @@
 import Button from "../base/Button";
-import { useState } from "react";
 import PropTypes from "prop-types";
 
 const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
-    <header className="z-10 w-full bg-auto shadow-md" role="banner">
+    <header className="z-50 w-full bg-auto" role="banner">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
@@ -17,44 +16,42 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
         {/* Navigation pour mobile */}
         <nav>
           <section className="flex lg:hidden">
+            {/* Affichage conditionnel : burger ou croix */}
             <div
-              className="space-y-2"
-              onClick={() => setIsNavOpen((prevState) => !prevState)}
+              className="space-y-2 cursor-pointer z-50" // Ajout d'un z-index plus élevé
+              onClick={() => setIsNavOpen((prev) => !prev)}
             >
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              {!isNavOpen ? (
+                <>
+                  <span className="block h-0.5 w-8 bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 bg-gray-600"></span>
+                </>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-gray-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
             </div>
 
             {/* Menu mobile */}
             <div
-              className={`absolute left-0 top-0 h-screen w-full transform bg-grayDark-1 text-grayDark-12 transition-transform duration-300 ease-in-out ${
+              className={`absolute left-0 top-0 h-screen w-full transform bg-grayDark-1 text-grayDark-12 transition-transform duration-300 ease-in-out z-40 ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
             >
-              <div className="absolute right-0 top-0 p-4">
-                <button
-                  onClick={() => setIsNavOpen(false)}
-                  className="text-gray-600"
-                >
-                  {/* Icone de fermeture */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="size-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <ul className="z-10 flex flex-col items-center space-y-4">
+              <ul className="z-50 flex flex-col items-center space-y-4">
                 <li>
                   <a href="#home" className="text-xl">
                     /Home
@@ -141,6 +138,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
     </header>
   );
 };
+
 Header.propTypes = {
   isNavOpen: PropTypes.bool.isRequired,
   setIsNavOpen: PropTypes.func.isRequired,

@@ -33,32 +33,34 @@ const Hero = ({ isNavOpen }) => {
         className="absolute left-1/2 top-10 z-0 h-auto w-[90%] -translate-x-1/2 md:w-3/5 lg:w-1/2"
       />
       {/* Titre principal */}
-      <div className="container mx-auto px-4 pt-20 md:pt-32 lg:pt-40">
-        <h1
-          id="hero-title"
-          className="z-10 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
-        >
-          <TypewriterComponent textArray={"Full stack web developer"} />
-        </h1>
+      {!isNavOpen && (
+        <div className="container mx-auto px-4 pt-20 md:pt-32 lg:pt-40">
+          <h1
+            id="hero-title"
+            className="z-10 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
+          >
+            <TypewriterComponent textArray={"Full stack web developer"} />
+          </h1>
 
-        {/* Accroche */}
-        <p className="z-10 mb-6 text-center font-mono text-lg text-grayDark-9 md:text-2xl">
-          based in Paris, France
-        </p>
+          {/* Accroche */}
+          <p className="z-10 mb-6 text-center font-mono text-lg text-grayDark-9 md:text-2xl">
+            based in Paris, France
+          </p>
 
-        {/* Bouton d'appel à l'action */}
-        {!isNavOpen && (
-          <div className="flex justify-center">
-            <Button
-              href="#contact"
-              className="z-10"
-              ariaLabel="Contacter Julien Medina"
-            >
-              /Work with me
-            </Button>
-          </div>
-        )}
-      </div>
+          {/* Bouton d'appel à l'action */}
+          {!isNavOpen && (
+            <div className="flex justify-center">
+              <Button
+                href="#contact"
+                className="z-10"
+                ariaLabel="Contacter Julien Medina"
+              >
+                /Work with me
+              </Button>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 };
