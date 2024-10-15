@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
     <header
-      className="sticky backdrop-blur  top-0 z-50 w-full bg-auto"
+      className="sticky 
+        top-0 z-50 w-full bg-auto"
       role="banner"
     >
       <div className="container mx-auto flex items-center justify-between p-4">
