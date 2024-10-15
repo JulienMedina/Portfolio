@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <section id="works" className="min-h-screen bg-grayDark-1 text-grayDark-12">
       <div className="container mx-auto py-12">
-        <h2 className="mb-8 text-center font-mono text-4xl font-semibold">
+        <h2 className="mb-8 text-center font-mono text-4xl font-semibold text-grayDark-12">
           My Works
         </h2>
         <div className="flex flex-wrap justify-center gap-8">

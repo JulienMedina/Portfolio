@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 
 const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
-    <header className="z-50 w-full bg-auto" role="banner">
+    <header
+      className="sticky backdrop-blur  top-0 z-50 w-full bg-auto"
+      role="banner"
+    >
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
@@ -18,7 +21,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
           <section className="flex lg:hidden">
             {/* Affichage conditionnel : burger ou croix */}
             <div
-              className="space-y-2 cursor-pointer z-50" // Ajout d'un z-index plus élevé
+              className="z-50 cursor-pointer space-y-2" // Ajout d'un z-index plus élevé
               onClick={() => setIsNavOpen((prev) => !prev)}
             >
               {!isNavOpen ? (

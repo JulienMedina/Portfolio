@@ -30,20 +30,20 @@ const Hero = ({ isNavOpen }) => {
       <img
         src={Ellipse}
         alt="Ellipse décorative"
-        className="absolute left-1/2 top-10 z-0 h-auto w-[90%] -translate-x-1/2 md:w-3/5 lg:w-1/2"
+        className="absolute left-1/2 top-10 z-0  h-auto w-full -translate-x-1/2 md:w-3/5 lg:w-1/2"
       />
       {/* Titre principal */}
       {!isNavOpen && (
         <div className="container mx-auto px-4 pt-20 md:pt-32 lg:pt-40">
           <h1
             id="hero-title"
-            className="z-10 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
+            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
           >
             <TypewriterComponent textArray={"Full stack web developer"} />
           </h1>
 
           {/* Accroche */}
-          <p className="z-10 mb-6 text-center font-mono text-lg text-grayDark-9 md:text-2xl">
+          <p className="relative z-20 mb-6 text-center font-mono text-lg text-grayDark-11 md:text-2xl">
             based in Paris, France
           </p>
 
