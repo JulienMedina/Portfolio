@@ -16,7 +16,7 @@ const Hero = ({ isNavOpen }) => {
   return (
     <section
       aria-labelledby="hero-title" // Lien avec le titre principal
-      className={`flex h-screen flex-col items-center justify-start bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out ${
+      className={`mb-[44vh] flex flex-col items-center justify-start bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -30,7 +30,7 @@ const Hero = ({ isNavOpen }) => {
       <img
         src={Ellipse}
         alt="Ellipse décorative"
-        className="absolute left-1/2 top-10 z-0  h-auto w-full -translate-x-1/2 md:w-3/5 lg:w-1/2"
+        className="absolute left-1/2 top-40 z-0 h-auto w-[120%] -translate-x-1/2 md:w-4/5 lg:w-3/4"
       />
       {/* Titre principal */}
       {!isNavOpen && (

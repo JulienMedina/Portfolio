@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 const Header = ({ isNavOpen, setIsNavOpen }) => {
   return (
     <header
-      className="sticky 
-        top-0 z-50 w-full bg-auto"
+      className="sticky backdrop-filter backdrop-blur-lg top-0 z-50 w-full bg-auto"
       role="banner"
     >
       <div className="container mx-auto flex items-center justify-between p-4">
@@ -49,9 +48,17 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
               )}
             </div>
 
+            {/* Overlay pour fermer le menu en cliquant en dehors */}
+            {isNavOpen && (
+              <div
+                className="bg-darkGray-1 fixed inset-0 z-40 opacity-50"
+                onClick={() => setIsNavOpen(false)}
+              />
+            )}
+
             {/* Menu mobile */}
             <div
-              className={`absolute left-0 top-0 h-screen w-full transform bg-grayDark-1 text-grayDark-12 transition-transform duration-300 ease-in-out z-40 ${
+              className={`absolute left-0 top-12 z-50 w-full transform bg-grayDark-2 text-grayDark-12 transition-transform duration-300 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
             >
@@ -77,7 +84,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                   </a>
                 </li>
                 {/* Bouton "Contact me" dans le menu burger */}
-                <div className="mt-4">
+                <div className="mt-4 flex justify-center">
                   <Button href="#contact" ariaLabel="Contacter Julien Medina">
                     /Contact me
                   </Button>

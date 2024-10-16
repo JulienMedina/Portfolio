@@ -18,11 +18,11 @@ function App() {
         {" "}
         {/* Utiliser flex grow pour occuper tout l'espace */}
         <Hero isNavOpen={isNavOpen} />
+        <Projects />
         <About />
       </main>
 
       {/* Section Projects */}
-      <Projects />
 
       {/* Footer */}
       <Footer />
