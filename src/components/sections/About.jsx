@@ -1,4 +1,4 @@
-import ProfilePicture from "../../assets/ProfilPicture2.png"; // Assure-toi que l'image est bien dans ce répertoire
+import ProfilePicture from "../../assets/image.png"; // Assure-toi que l'image est bien dans ce répertoire
 
 const About = () => {
   return (
@@ -12,7 +12,7 @@ const About = () => {
           <img
             src={ProfilePicture}
             alt="Portrait of Julien Medina"
-            className="w-11/12 h-30  object-cover"
+            className=" w-11/12 object-fill"
           />
           <figcaption className="mt-4 text-center text-lg text-grayDark-9">
             Julien Medina - Full Stack Developer

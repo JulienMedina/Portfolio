@@ -10,6 +10,10 @@ const TypewriterComponent = ({ textArray }) => {
         options={{
           strings: textArray,
           autoStart: true,
+          loop: false,
+          deleteSpeed: Infinity,
+          delay: 75,
+          cursor: "", // Facultatif : ajuste la vitesse de l'écriture si nécessaire
         }}
       />
     </div>

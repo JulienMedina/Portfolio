@@ -39,7 +39,7 @@ const Hero = ({ isNavOpen }) => {
             id="hero-title"
             className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
           >
-            <TypewriterComponent textArray={"Full stack web developer"} />
+            <TypewriterComponent textArray={["Full stack web developer"]} />
           </h1>
 
           {/* Accroche */}

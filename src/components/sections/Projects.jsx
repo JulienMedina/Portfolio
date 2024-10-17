@@ -23,7 +23,7 @@ const Projects = () => {
               className="absolute left-[25px] top-[-25px] w-1/3 "
             />
           </div>
-          <h2 className="text-center font-mono text-4xl font-semibold text-grayDark-12 md:text-left">
+          <h2 className="text-center font-sans text-4xl font-semibold text-grayDark-12 md:text-left">
             My Work
           </h2>
         </div>

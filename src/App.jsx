@@ -4,6 +4,7 @@ import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
 import { useState } from "react";
+import Skills from "./components/sections/Skills";
 
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         <Hero isNavOpen={isNavOpen} />
         <Projects />
         <About />
+        <Skills />
       </main>
 
       {/* Section Projects */}
