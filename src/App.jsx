@@ -10,7 +10,7 @@ function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-grayDark-1">
+    <div className="relative flex min-h-screen flex-col bg-black">
       {/* Header */}
       <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
