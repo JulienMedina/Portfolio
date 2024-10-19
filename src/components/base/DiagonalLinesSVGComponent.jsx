@@ -12,14 +12,17 @@ const DiagonalLinesSVGComponent = ({ startX, startY, delay, duration }) => {
       {
         x: startX,
         y: startY,
-        opacity: 1, // Commence à pleine opacité
+        opacity: 1,
+
+        // Commence à pleine opacité
       },
       {
         x: startX + 500, // Par exemple, déplacement vers la droite
-        y: startY + 500, // Descente
-        opacity: 0, // Fade-out progressif
+        y: startY + 400, // Descente
+        opacity: 0,
+        scale: 1, // Fade-out progressif
         duration: duration, // Durée totale de l'animation
-        ease: "linear",
+        ease: "power2.Out", // Effet d'accélération
         repeat: -1, // Répétition infinie
         delay: delay, // Ajout d'un délai
       }
@@ -31,7 +34,7 @@ const DiagonalLinesSVGComponent = ({ startX, startY, delay, duration }) => {
       src={DiagonalLinesSVG}
       alt="Lignes diagonales décoratives"
       ref={svgRef}
-      className="absolute z-0 w-1/2 md:w-1/3 lg:w-1/4" // Classes tailwind pour le style
+      className="absolute left-0 top-[-100px] z-0 w-1/2 md:w-1/3 lg:w-1/4" // Classes tailwind pour le style
     />
   );
 };
