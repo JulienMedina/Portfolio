@@ -22,9 +22,12 @@ const DiagonalLinesSVGComponent = ({ startX, startY, delay, duration }) => {
         opacity: 0,
         scale: 1, // Fade-out progressif
         duration: duration, // Durée totale de l'animation
-        ease: "power2.Out", // Effet d'accélération
+        ease: "slow", // Effet d'accélération
         repeat: -1, // Répétition infinie
-        delay: delay, // Ajout d'un délai
+        delay: delay,
+        stagger: {
+          amount: 0.5, // Chevauchement des animations
+        }, // Ajout d'un délai
       }
     );
   }, [startX, startY, delay, duration]);

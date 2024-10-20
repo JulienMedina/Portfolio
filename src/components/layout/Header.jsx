@@ -1,16 +1,28 @@
 import Button from "../base/Button";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 const Header = ({ isNavOpen, setIsNavOpen }) => {
+  // Empêcher le scroll lorsque le menu est ouvert
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden"; // Désactive le scroll
+    } else {
+      document.body.style.overflow = "auto"; // Réactive le scroll
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Réactiver le scroll en cas de démontage
+    };
+  }, [isNavOpen]);
   return (
     <header
-      className="sticky backdrop-filter backdrop-blur-lg top-0 z-50 w-full bg-auto"
+      className="sticky top-0 z-50 w-full   border-b border-grayDark-12 bg-black "
       role="banner"
     >
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
-          className="font-mono text-2xl text-grayDark-12"
+          className="font-mono text-xl text-grayDark-12"
           aria-label="Initiales JM"
         >
           Julien Medina
@@ -58,7 +70,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
 
             {/* Menu mobile */}
             <div
-              className={`absolute left-0 top-12 z-50 w-full transform bg-grayDark-2 text-grayDark-12 transition-transform duration-300 ease-in-out ${
+              className={`absolute left-0 top-12 z-50 h-screen w-full transform bg-black text-grayDark-12 transition-transform duration-400 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
             >

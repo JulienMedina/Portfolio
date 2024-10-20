@@ -34,7 +34,7 @@ const SkillsSection = () => {
       id="skills"
       className="min-h-screen bg-grayDark-1 text-grayDark-12 py-12"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto justify-items-center px-20 ">
         <h2 className="text-center font-sans text-4xl font-semibold mb-8">
           My Toolbox
         </h2>
@@ -58,13 +58,13 @@ const SkillsSection = () => {
         <img
           src={Divider}
           alt="Ligne décorative"
-          className="my-8 h-auto w-full max-w-full sm:w-3/4 md:w-1/2 lg:w-full"
+          className="my-8 h-auto w-full   sm:w-3/4 md:w-1/2 lg:w-full"
         />
 
         {/* Back-end skills */}
         <div className="mb-8">
           <h3 className="mb-4 text-lg font-bold text-grayDark-11">Back-end</h3>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {backEndSkills.map((skill) => (
               <Badge
                 key={skill.label}
