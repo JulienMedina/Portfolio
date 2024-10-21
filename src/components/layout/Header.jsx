@@ -63,14 +63,14 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             {/* Overlay pour fermer le menu en cliquant en dehors */}
             {isNavOpen && (
               <div
-                className="bg-darkGray-1 fixed inset-0 z-40 opacity-50"
+                className="fixed inset-0 z-40 bg-grayDark-1 opacity-50"
                 onClick={() => setIsNavOpen(false)}
               />
             )}
 
             {/* Menu mobile */}
             <div
-              className={`absolute left-0 top-12 z-50 h-screen w-full transform bg-black text-grayDark-12 transition-transform duration-400 ease-in-out ${
+              className={`absolute left-0 top-12 z-50 h-screen w-full transform bg-black text-grayDark-12 transition-transform duration-1000 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
             >

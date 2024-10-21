@@ -74,6 +74,12 @@ const Hero = ({ isNavOpen }) => {
               </Button>
             </div>
           )}
+          {/* Badge Scroll down */}
+          <div className="relative -bottom-40 flex justify-center">
+            <span className="animate-pulse rounded-sm border border-grayDark-12  px-4 py-1 text-sm text-grayDark-12 ">
+              Scroll
+            </span>
+          </div>
         </div>
       )}
     </section>
