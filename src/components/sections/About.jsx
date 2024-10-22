@@ -58,7 +58,7 @@ const About = () => {
           {/* Texte de présentation (gauche) */}
           <div
             ref={textRef}
-            className="w-full pl-20 text-center md:w-1/2 md:text-left"
+            className="w-full md:pl-20 text-center md:w-1/2 md:text-left"
           >
             <h2 className="mb-4 text-center font-sans text-3xl font-semibold">
               Get to know me better

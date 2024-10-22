@@ -1,35 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
-import TypewriterComponent from "../base/Typewriter";
+import { gsap } from "gsap";
 import Button from "../base/Button";
 import Ellipse from "../../assets/Ellipse.svg";
 import DiagonalLinesSVGComponent from "../base/DiagonalLinesSVGComponent";
 
 const Hero = ({ isNavOpen }) => {
   const [loaded, setLoaded] = useState(false);
+  const titleRef = useRef(null); // Référence au titre pour l'animation
 
   // Tableau contenant les paramètres des animations pour chaque SVG
+  // Tableau contenant les paramètres des animations pour chaque SVG
   const diagonalLinesSettings = [
-    { startX: -200, startY: 0, delay: 0, duration: 8 },
-    { startX: -100, startY: 0, delay: 0.5, duration: 12 },
-    { startX: -300, startY: 0, delay: 1, duration: 14 },
-    { startX: -200, startY: 0, delay: 1.5, duration: 10 },
-    { startX: -100, startY: 0, delay: 2, duration: 12 },
-    { startX: -200, startY: 0, delay: 2.5, duration: 14 },
-    { startX: -300, startY: 0, delay: 3, duration: 10 },
-    { startX: -200, startY: 0, delay: 3.5, duration: 12 },
-    { startX: -100, startY: 0, delay: 4, duration: 14 },
-    { startX: -200, startY: 0, delay: 0, duration: 8 },
+    { startX: -200, startY: -100, delay: 0.2, duration: 5 },
+    { startX: -100, startY: -200, delay: 0.3, duration: 5 },
+    { startX: -300, startY: -300, delay: 0.4, duration: 6 },
+    { startX: -200, startY: -250, delay: 0.5, duration: 6 },
+    { startX: -100, startY: -350, delay: 0.6, duration: 7 },
+    { startX: -200, startY: -125, delay: 0.7, duration: 6 },
+    { startX: -300, startY: -175, delay: 0.8, duration: 7 },
+    { startX: -200, startY: -225, delay: 0.9, duration: 7 },
+    { startX: -100, startY: -115, delay: 1, duration: 7 },
+    { startX: -200, startY: -225, delay: 1.1, duration: 7 },
+    { startX: -200, startY: -325, delay: 1.2, duration: 6 },
+    { startX: -150, startY: -150, delay: 1.3, duration: 5 },
+    { startX: -300, startY: -275, delay: 1.4, duration: 5 },
+    { startX: -250, startY: -325, delay: 1.5, duration: 6 },
+    { startX: -100, startY: -75, delay: 1.6, duration: 6 },
   ];
 
   useEffect(() => {
     setLoaded(true);
+
+    // Animation GSAP pour le titre
+    const tl = gsap.timeline();
+    tl.fromTo(
+      titleRef.current.children,
+      {
+        y: -100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power4.out",
+        stagger: 0.1,
+      }
+    );
   }, []);
 
   return (
     <section
       aria-labelledby="hero-title"
-      className={` flex h-screen flex-col items-center justify-start bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out ${
+      className={` flex h-screen flex-col items-center justify-start bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out 2xl:min-h-max ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -51,15 +75,20 @@ const Hero = ({ isNavOpen }) => {
       />
 
       {!isNavOpen && (
-        <div className="container relative top-36 mx-auto px-4 pt-20 md:pt-32 lg:-top-10 lg:pt-40">
+        <div className="container relative top-36 mx-auto px-4 pt-20 md:pt-32 lg:-top-10 lg:pt-40 ">
           <h1
             id="hero-title"
-            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
+            ref={titleRef} // Référence pour le GSAP
+            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl "
           >
-            <TypewriterComponent textArray={["Full stack web developer"]} />
+            {["Full", "stack", "web", "developer"].map((word, index) => (
+              <span key={index} className="inline-block">
+                {word}&nbsp;
+              </span>
+            ))}
           </h1>
 
-          <p className="relative z-20 mb-6 text-center font-mono text-lg text-grayDark-11 md:text-2xl">
+          <p className="relative z-20 mb-6 text-center font-mono text-lg text-grayDark-11 md:text-2xl ">
             based in Paris, France
           </p>
 

@@ -16,13 +16,13 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
   }, [isNavOpen]);
   return (
     <header
-      className="sticky top-0 z-50 w-full   border-b border-grayDark-12 bg-black "
+      className="sticky top-0 z-50 w-full border-b border-grayDark-12 bg-black "
       role="banner"
     >
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto flex items-center justify-between p-4 ">
         {/* Initiales à gauche */}
         <div
-          className="font-mono text-xl text-grayDark-12"
+          className="font-mono text-xl text-grayDark-12  "
           aria-label="Initiales JM"
         >
           Julien Medina
@@ -115,7 +115,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             <li>
               <a
                 href="#home"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4 "
                 aria-label="Accueil"
               >
                 /Home
@@ -124,7 +124,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             <li>
               <a
                 href="#about"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4 "
                 aria-label="À propos"
               >
                 /About
@@ -133,7 +133,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             <li>
               <a
                 href="#works"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4 "
                 aria-label="Projets"
               >
                 /Works
@@ -142,7 +142,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             <li>
               <a
                 href="#skills"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4 "
                 aria-label="Compétences"
               >
                 /Skills

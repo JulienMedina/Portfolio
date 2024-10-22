@@ -3,7 +3,7 @@ import Button from "./Button"; // Importation de ton bouton personnalisé
 
 const Card = ({ image, title, description, buttonText, buttonLink }) => {
   return (
-    <div className="card card-compact w-96 rounded-sm border-2 border-solid border-grayDark-7 bg-grayDark-1 shadow-xl">
+    <div className="card card-compact w-60 rounded-md border-2 border-solid border-grayDark-7 bg-grayDark-1 shadow-xl">
       <figure>
         <img src={image} alt={title} className=" hover:blur-sm" />
       </figure>

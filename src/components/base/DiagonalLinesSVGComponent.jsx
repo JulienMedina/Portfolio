@@ -17,17 +17,15 @@ const DiagonalLinesSVGComponent = ({ startX, startY, delay, duration }) => {
         // Commence à pleine opacité
       },
       {
-        x: startX + 500, // Par exemple, déplacement vers la droite
-        y: startY + 400, // Descente
-        opacity: 0,
-        scale: 1, // Fade-out progressif
+        x: startX + 100, // Par exemple, déplacement vers la droite
+        y: startY + 200, // Descente
+        opacity: 1,
+        // Fade-out progressif
         duration: duration, // Durée totale de l'animation
-        ease: "slow", // Effet d'accélération
-        repeat: -1, // Répétition infinie
+        ease: "power2.out", // Effet d'accélération
+        repeat: 0, // Répétition infinie
         delay: delay,
-        stagger: {
-          amount: 0.5, // Chevauchement des animations
-        }, // Ajout d'un délai
+        // Ajout d'un délai // Ajout d'un délai
       }
     );
   }, [startX, startY, delay, duration]);

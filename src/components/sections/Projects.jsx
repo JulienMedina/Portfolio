@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Projects = () => {
   const cardRef = useRef(null);
   const textRef = useRef(null);
+  const lineRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -44,10 +45,24 @@ const Projects = () => {
         },
       }
     );
+    gsap.fromTo(
+      lineRef.current,
+      { scaleX: 0, transformOrigin: "center" },
+      {
+        scaleX: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
   }, []);
   return (
     <section id="works" className="bg-grayDark-1 text-grayDark-12">
-      <div className="container mx-auto py-12 xl:pl-16 ">
+      <div className="container mx-auto py-8 xl:pl-16 ">
         {/* Div avec flex pour aligner le SVG et le titre */}
         <div
           className="mb-8 flex items-center sm:justify-center md:justify-start"
@@ -75,7 +90,7 @@ const Projects = () => {
 
         {/* Centrer les cartes en mobile et les aligner à gauche en grand écran */}
         <div
-          className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-start md:px-8 lg:px-12"
+          className="flex flex-col items-center gap-8 py-8 md:flex-row md:items-start md:justify-center md:px-8 lg:px-12 xl:py-16 "
           ref={cardRef}
         >
           {/* Exemple de card avec ton bouton */}
@@ -97,6 +112,7 @@ const Projects = () => {
         <img
           src={Vector}
           alt="ligne vector décorative"
+          ref={lineRef}
           className="relative mx-auto mt-10 h-[3px] w-full max-w-[95%] sm:max-w-[90%] md:max-w-[90%] lg:max-w-full"
         />
       </div>

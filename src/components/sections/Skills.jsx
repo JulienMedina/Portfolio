@@ -34,6 +34,7 @@ const softSkills = [
 
 const SkillsSection = () => {
   const lineRefs = useRef([]);
+  const textRef = useRef(null);
 
   useEffect(() => {
     lineRefs.current.forEach((line) => {
@@ -52,6 +53,22 @@ const SkillsSection = () => {
         }
       );
     });
+
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: textRef.current, // L'élément qui déclenche l'animation
+          start: "top 80%", // Démarre quand l'élément atteint 80% de la fenêtre
+          toggleActions: "play none none none", // Joue l'animation à l'arrivée
+        },
+      }
+    );
   }, []);
   return (
     <section
@@ -59,7 +76,10 @@ const SkillsSection = () => {
       className="min-h-screen bg-grayDark-1 py-12 text-grayDark-12"
     >
       <div className="container mx-auto justify-items-center px-20 ">
-        <h2 className="mb-8 text-center font-sans text-4xl font-semibold">
+        <h2
+          ref={textRef}
+          className="mb-8 text-center font-sans text-4xl font-semibold"
+        >
           My Toolbox
         </h2>
 

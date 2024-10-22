@@ -2,8 +2,32 @@ import Button from "../base/Button";
 import SmallStar from "../../assets/Portal.svg";
 import BigStar from "../../assets/PortalG.svg";
 import Cross from "../../assets/Cross.svg";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: textRef.current, // L'élément qui déclenche l'animation
+          start: "top 80%", // Démarre quand l'élément atteint 80% de la fenêtre
+          toggleActions: "play none none none", // Joue l'animation à l'arrivée
+        },
+      }
+    );
+  }, []);
   return (
     <section
       id="contact"
@@ -11,7 +35,10 @@ const ContactSection = () => {
     >
       <div className="container relative mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-20">
         {/* Left side content */}
-        <div className="relative z-10 mb-8 grid grid-cols-[auto_1fr] items-center gap-4 md:mb-0 md:w-1/2">
+        <div
+          ref={textRef}
+          className="relative z-10 mb-8 grid grid-cols-[auto_1fr] items-center gap-4 md:mb-0 md:w-1/2"
+        >
           <div className="relative w-8 md:w-12 lg:w-16">
             {/* Large star */}
             <img
