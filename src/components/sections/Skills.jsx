@@ -10,19 +10,19 @@ const frontEndSkills = [
   { label: "CSS", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "React", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "Tailwind", bgColor: "bg-yellow-300", textColor: "text-black" },
-  { label: "Figma", bgColor: "bg-yellow-300", textColor: "text-black" },
 ];
 
 const backEndSkills = [
   { label: "Node.js", bgColor: "bg-purple-200", textColor: "text-white" },
   { label: "Express", bgColor: "bg-purple-200", textColor: "text-white" },
   { label: "PostgreSQL", bgColor: "bg-purple-200", textColor: "text-white" },
-  { label: "Docker", bgColor: "bg-purple-200", textColor: "text-white" },
 ];
 
 const tools = [
-  { label: "Git", bgColor: "bg-orange-500", textColor: "text-white" },
-  { label: "GitHub", bgColor: "bg-gray-900", textColor: "text-white" },
+  { label: "Git", bgColor: "bg-Button-color1", textColor: "text-black" },
+  { label: "GitHub", bgColor: "bg-Button-color1", textColor: "text-black" },
+  { label: "Docker", bgColor: "bg-Button-color1", textColor: "text-black" },
+  { label: "Figma", bgColor: "bg-Button-color1", textColor: "text-black" },
 ];
 
 const softSkills = [
@@ -131,7 +131,7 @@ const SkillsSection = () => {
 
         {/* Outils */}
         <div className="mb-8">
-          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Outils</h3>
+          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Tools</h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {tools.map((tool) => (
               <Badge

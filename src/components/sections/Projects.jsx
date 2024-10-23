@@ -65,7 +65,7 @@ const Projects = () => {
       <div className="container mx-auto py-8 xl:pl-16 ">
         {/* Div avec flex pour aligner le SVG et le titre */}
         <div
-          className="mb-8 flex items-center sm:justify-center md:justify-start"
+          className="mb-8 flex items-center justify-center pr-12 md:justify-start"
           ref={textRef}
         >
           {/* Div relative pour les étoiles */}
@@ -83,7 +83,7 @@ const Projects = () => {
               className="absolute left-[20px] top-[-25px] w-1/3 sm:left-[20px] md:left-[49px] "
             />
           </div>
-          <h2 className="text-center font-sans text-3xl font-semibold text-grayDark-12 md:text-4xl xl:text-left">
+          <h2 className="text-center font-sans text-2xl font-semibold text-grayDark-12 md:text-left md:text-4xl">
             My Work
           </h2>
         </div>

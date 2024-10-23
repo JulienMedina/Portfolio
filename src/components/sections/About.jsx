@@ -1,8 +1,9 @@
-import ProfilePicture from "../../assets/ProfilPicture2.png"; // Assure-toi que l'image est bien dans ce répertoire
+import ProfilePicture from "../../assets/ProfilPicture2.png";
+import CV from "../../assets/CV.pdf";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import du plugin
-
+import Button from "../base/Button";
 // Register ScrollTrigger avec GSAP
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,10 +56,22 @@ const About = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center md:flex-row md:space-x-12">
-          {/* Texte de présentation (gauche) */}
+          {/* Image stylisée (au-dessus du texte en mobile, à droite en grand écran) */}
+          <div
+            className="order-1 mt-8 flex w-full justify-center pb-10 md:order-2 md:mt-0 md:w-1/2"
+            ref={imgRef}
+          >
+            <img
+              src={ProfilePicture}
+              alt="Portrait of Julien Medina"
+              className="h-[20rem] w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:h-[30rem] md:w-2/3 lg:w-1/2"
+            />
+          </div>
+
+          {/* Texte de présentation (en dessous de l'image en mobile, à gauche en grand écran) */}
           <div
             ref={textRef}
-            className="w-full md:pl-20 text-center md:w-1/2 md:text-left"
+            className="order-2 w-full text-center md:order-1 md:pl-20 md:w-1/2 md:text-left"
           >
             <h2 className="mb-4 text-center font-sans text-3xl font-semibold">
               Get to know me better
@@ -67,25 +80,21 @@ const About = () => {
               I’m Julien, a passionate and motivated junior developer based in
               Paris. With a solid foundation in programming and problem-solving,
               I specialize in JavaScript, React, Node.js, and other
-              technologies. I focus on writing clean, efficient code and love
-              working on impactful projects.
+              technologies. Eager to apply my skills in real-world projects, I
+              focus on writing clean, efficient code and constantly learning new
+              technologies. Whether working independently or collaborating
+              within a team, I am committed to building impactful and
+              user-friendly solutions.
             </p>
             <p className="text-center font-sans text-lg text-grayDark-11">
-              I'm always eager to learn new technologies and take on exciting
-              challenges. Let's work together and build something amazing!
+              Looking forward to contributing to innovative projects and growing
+              in the tech industry.
             </p>
-          </div>
-
-          {/* Image stylisée (droite) */}
-          <div
-            className="mt-8 flex w-full justify-center md:mt-0 md:w-1/2"
-            ref={imgRef}
-          >
-            <img
-              src={ProfilePicture}
-              alt="Portrait of Julien Medina"
-              className="h-[30rem] w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:w-2/3 lg:w-1/2"
-            />
+            <div className="mt-8 flex justify-center ">
+              <Button href={CV} ariaLabel="Télécharger le CV de Julien Medina">
+                Download resume
+              </Button>
+            </div>
           </div>
         </div>
       </div>
