@@ -6,14 +6,19 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
   // Empêcher le scroll lorsque le menu est ouvert
   useEffect(() => {
     if (isNavOpen) {
-      document.body.style.overflow = "hidden"; // Désactive le scroll
+      document.body.classList.add("overflow-hidden"); // Ajout de classe
     } else {
-      document.body.style.overflow = "auto"; // Réactive le scroll
+      document.body.classList.remove("overflow-hidden"); // Retrait de classe
     }
     return () => {
-      document.body.style.overflow = "auto"; // Réactiver le scroll en cas de démontage
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isNavOpen]);
+
+  // Fontion pour ferme le menu après un clic sur un lien
+  const handleLinkClick = () => {
+    setIsNavOpen(false);
+  };
   return (
     <header
       className="sticky top-0 z-50 w-full border-b border-grayDark-12 bg-black "
@@ -33,7 +38,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
           <section className="flex lg:hidden">
             {/* Affichage conditionnel : burger ou croix */}
             <div
-              className="z-50 cursor-pointer space-y-2" // Ajout d'un z-index plus élevé
+              className="z-50 cursor-pointer space-y-2"
               onClick={() => setIsNavOpen((prev) => !prev)}
             >
               {!isNavOpen ? (
@@ -49,6 +54,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  aria-label="Fermer le menu"
                 >
                   <path
                     strokeLinecap="round"
@@ -76,28 +82,48 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
             >
               <ul className="z-50 flex flex-col items-center space-y-4">
                 <li>
-                  <a href="#home" className="text-xl">
+                  <a
+                    href="#hero-title"
+                    className="text-xl"
+                    onClick={handleLinkClick}
+                  >
                     /Home
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="text-xl">
+                  <a
+                    href="#about"
+                    className="text-xl"
+                    onClick={handleLinkClick}
+                  >
                     /About
                   </a>
                 </li>
                 <li>
-                  <a href="#works" className="text-xl">
+                  <a
+                    href="#works"
+                    className="text-xl"
+                    onClick={handleLinkClick}
+                  >
                     /Works
                   </a>
                 </li>
                 <li>
-                  <a href="#skills" className="text-xl">
+                  <a
+                    href="#skills"
+                    className="text-xl"
+                    onClick={handleLinkClick}
+                  >
                     /Skills
                   </a>
                 </li>
                 {/* Bouton "Contact me" dans le menu burger */}
                 <div className="mt-4 flex justify-center">
-                  <Button href="#contact" ariaLabel="Contacter Julien Medina">
+                  <Button
+                    href="#contact"
+                    ariaLabel="Contacter Julien Medina"
+                    onClick={handleLinkClick}
+                  >
                     /Contact me
                   </Button>
                 </div>

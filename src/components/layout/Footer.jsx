@@ -1,43 +1,50 @@
 const Footer = () => {
   return (
-    <footer className="bg-auto p-4 text-center text-grayDark-12">
-      <section className="container mx-auto flex flex-col items-center justify-between md:flex-row">
-        {/* Section d'information */}
-        <div className="flex items-center space-x-4">
-          <span className="text-2xl font-bold">Julien Medina</span>
-          <span className="text-sm">Développeur Web</span>
-        </div>
-
-        {/* Copyright */}
-        <div className="mt-4 text-center text-sm md:mt-0">
-          <p>
-            &copy; {new Date().getFullYear()} Julien Medina. Tous droits
-            réservés
-          </p>
+    <footer className="bg-grayDark-1 p-6 text-center text-grayDark-12">
+      <section className="container mx-auto flex flex-col items-center justify-between md:flex-row md:items-center md:justify-between">
+        {/* Nom et titre */}
+        <div className="mb-4 md:mb-0">
+          <span className="block text-xl font-semibold">Julien Medina</span>
         </div>
 
         {/* Réseaux sociaux */}
-        {/* Réseaux sociaux */}
-        <nav className="mt-4 flex flex-col space-x-0 text-center md:mt-0 md:flex-row md:space-x-4">
+        <nav className="mb-4 flex space-x-6 md:mb-0">
           <a
             href="https://twitter.com"
+            aria-label="Twitter"
             className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Twitter
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/JulienMedina"
+            aria-label="GitHub"
             className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/julien-m-269497236/"
+            aria-label="LinkedIn"
             className="text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
         </nav>
+
+        {/* Copyright */}
+        <div className="text-sm">
+          <p>
+            &copy; {new Date().getFullYear()} Julien Medina. Tous droits
+            réservés.
+          </p>
+        </div>
       </section>
     </footer>
   );

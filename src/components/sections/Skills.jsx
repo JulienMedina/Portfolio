@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
 const frontEndSkills = [
   { label: "HTML", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "CSS", bgColor: "bg-yellow-300", textColor: "text-black" },
@@ -37,6 +38,7 @@ const SkillsSection = () => {
   const textRef = useRef(null);
 
   useEffect(() => {
+    // Animation des lignes décoratives
     lineRefs.current.forEach((line) => {
       gsap.fromTo(
         line,
@@ -54,6 +56,7 @@ const SkillsSection = () => {
       );
     });
 
+    // Animation du titre
     gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -70,12 +73,13 @@ const SkillsSection = () => {
       }
     );
   }, []);
+
   return (
     <section
       id="skills"
       className="min-h-screen bg-grayDark-1 py-12 text-grayDark-12"
     >
-      <div className="container mx-auto justify-items-center px-20 ">
+      <div className="container mx-auto justify-items-center px-20">
         <h2
           ref={textRef}
           className="mb-8 text-center font-sans text-4xl font-semibold"
@@ -103,7 +107,8 @@ const SkillsSection = () => {
           src={Divider}
           alt="Ligne décorative"
           ref={(el) => (lineRefs.current[0] = el)}
-          className="my-8 h-auto w-full   sm:w-3/4 md:w-1/2 lg:w-full"
+          className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
+          aria-hidden="true"
         />
 
         {/* Back-end skills */}
@@ -126,7 +131,8 @@ const SkillsSection = () => {
           src={Divider}
           alt="Ligne décorative"
           ref={(el) => (lineRefs.current[1] = el)}
-          className="my-8 h-auto w-full max-w-full sm:w-3/4 md:w-1/2 lg:w-full"
+          className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
+          aria-hidden="true"
         />
 
         {/* Outils */}
@@ -149,7 +155,8 @@ const SkillsSection = () => {
           src={Divider}
           alt="Ligne décorative"
           ref={(el) => (lineRefs.current[2] = el)}
-          className="my-8 h-auto w-full max-w-full sm:w-3/4 md:w-1/2 lg:w-full"
+          className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
+          aria-hidden="true"
         />
 
         {/* Soft Skills */}

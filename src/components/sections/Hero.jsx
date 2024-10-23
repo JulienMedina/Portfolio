@@ -9,8 +9,7 @@ const Hero = ({ isNavOpen }) => {
   const [loaded, setLoaded] = useState(false);
   const titleRef = useRef(null); // Référence au titre pour l'animation
 
-  // Tableau contenant les paramètres des animations pour chaque SVG
-  // Tableau contenant les paramètres des animations pour chaque SVG
+  // Paramètres pour chaque SVG animée
   const diagonalLinesSettings = [
     { startX: -200, startY: -100, delay: 0.2, duration: 5 },
     { startX: -100, startY: -200, delay: 0.3, duration: 5 },
@@ -33,18 +32,14 @@ const Hero = ({ isNavOpen }) => {
     setLoaded(true);
 
     // Animation GSAP pour le titre
-    const tl = gsap.timeline();
-    tl.fromTo(
+    gsap.fromTo(
       titleRef.current.children,
-      {
-        y: -100,
-        opacity: 0,
-      },
+      { y: -100, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         duration: 2,
-        ease: "power4.out",
+        ease: "power2.out",
         stagger: 0.1,
       }
     );
@@ -53,11 +48,11 @@ const Hero = ({ isNavOpen }) => {
   return (
     <section
       aria-labelledby="hero-title"
-      className={` flex h-screen flex-col items-center justify-start bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out 2xl:min-h-max ${
+      className={`flex h-screen flex-col items-center justify-start bg-grayDark-1 text-grayDark-12 transition-opacity duration-1000 ease-in-out 2xl:min-h-max ${
         loaded ? "opacity-100" : "opacity-0"
       }`}
     >
-      {/* Utilisation de .map() pour générer plusieurs SVGs */}
+      {/* Animation des SVG avec map() */}
       {diagonalLinesSettings.map((settings, index) => (
         <DiagonalLinesSVGComponent
           key={index}
@@ -68,18 +63,21 @@ const Hero = ({ isNavOpen }) => {
         />
       ))}
 
+      {/* Ellipse décorative */}
       <img
         src={Ellipse}
         alt="Ellipse décorative"
+        aria-hidden="true" // Cache l'élément pour les lecteurs d'écran
         className="absolute left-1/2 top-56 z-0 h-auto w-[120%] -translate-x-1/2 md:w-4/5 lg:top-20 lg:w-3/4"
       />
 
+      {/* Section du contenu principal */}
       {!isNavOpen && (
         <div className="container relative top-36 mx-auto px-4 pt-20 md:pt-32 lg:-top-10 lg:pt-40 ">
           <h1
             id="hero-title"
             ref={titleRef} // Référence pour le GSAP
-            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl "
+            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
           >
             {["Full", "stack", "web", "developer"].map((word, index) => (
               <span key={index} className="inline-block">
@@ -88,10 +86,12 @@ const Hero = ({ isNavOpen }) => {
             ))}
           </h1>
 
-          <p className="relative z-20 mb-6 text-center font-mono text-lg text-grayDark-11 md:text-2xl ">
+          {/* Sous-titre */}
+          <p className="relative z-20 mb-6 text-center font-mono text-lg text-grayDark-11 md:text-2xl">
             based in Paris, France
           </p>
 
+          {/* Bouton d'appel à l'action */}
           {!isNavOpen && (
             <div className="flex justify-center">
               <Button
@@ -103,9 +103,10 @@ const Hero = ({ isNavOpen }) => {
               </Button>
             </div>
           )}
+
           {/* Badge Scroll down */}
           <div className="relative -bottom-40 flex justify-center">
-            <span className="animate-pulse rounded-sm border border-grayDark-12  px-4 py-1 text-sm text-grayDark-12 ">
+            <span className="animate-pulse rounded-sm border border-grayDark-12 px-4 py-1 text-sm text-grayDark-12">
               Scroll
             </span>
           </div>

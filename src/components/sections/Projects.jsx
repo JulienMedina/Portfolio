@@ -1,27 +1,29 @@
 import Card from "../base/Card";
 import PortalG from "../../assets/PortalG.svg";
-import SmallStar from "../../assets/Portal.svg"; // Importation de la petite étoile
+import SmallStar from "../../assets/Portal.svg";
 import Vector from "../../assets/Vector.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
-// Importation du vecteur
+
 const Projects = () => {
   const cardRef = useRef(null);
   const textRef = useRef(null);
   const lineRef = useRef(null);
 
   useEffect(() => {
+    // Animation des cartes
     gsap.fromTo(
-      cardRef.current,
+      cardRef.current.children,
       { opacity: 0, x: -50 },
       {
         opacity: 1,
         x: 0,
         duration: 1.5,
         ease: "power1.out",
+        stagger: 0.2, // Animation en cascade pour les cartes
         scrollTrigger: {
           trigger: cardRef.current,
           start: "top 80%",
@@ -30,6 +32,7 @@ const Projects = () => {
       }
     );
 
+    // Animation du texte
     gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -45,6 +48,8 @@ const Projects = () => {
         },
       }
     );
+
+    // Animation de la ligne vectorielle
     gsap.fromTo(
       lineRef.current,
       { scaleX: 0, transformOrigin: "center" },
@@ -60,27 +65,27 @@ const Projects = () => {
       }
     );
   }, []);
+
   return (
     <section id="works" className="bg-grayDark-1 text-grayDark-12">
-      <div className="container mx-auto py-8 xl:pl-16 ">
-        {/* Div avec flex pour aligner le SVG et le titre */}
+      <div className="container mx-auto py-8 xl:pl-16">
+        {/* Alignement du SVG et du titre */}
         <div
           className="mb-8 flex items-center justify-center pr-12 md:justify-start"
           ref={textRef}
         >
-          {/* Div relative pour les étoiles */}
           <div className="relative mr-3 w-8 md:w-12 md:pl-4 lg:w-16 lg:pl-8">
-            {/* Grande étoile */}
             <img
               src={PortalG}
               alt="Grande étoile décorative"
               className="absolute left-[10px] top-[-20px] w-5 sm:w-7 sm:left-[28px]"
+              aria-hidden="true" // Cache pour les lecteurs d'écran
             />
-            {/* Petite étoile en diagonale */}
             <img
               src={SmallStar}
               alt="Petite étoile décorative"
-              className="absolute left-[20px] top-[-25px] w-1/3 sm:left-[20px] md:left-[49px] "
+              className="absolute left-[20px] top-[-25px] w-1/3 sm:left-[20px] md:left-[49px]"
+              aria-hidden="true"
             />
           </div>
           <h2 className="text-center font-sans text-2xl font-semibold text-grayDark-12 md:text-left md:text-4xl">
@@ -88,12 +93,11 @@ const Projects = () => {
           </h2>
         </div>
 
-        {/* Centrer les cartes en mobile et les aligner à gauche en grand écran */}
+        {/* Contenu des cartes */}
         <div
-          className="flex flex-col items-center gap-8 py-8 md:flex-row md:items-start md:justify-center md:px-8 lg:px-12 xl:py-16 "
+          className="flex flex-col items-center gap-8 py-8 md:flex-row md:items-start md:justify-center md:px-8 lg:px-12 xl:py-16"
           ref={cardRef}
         >
-          {/* Exemple de card avec ton bouton */}
           <Card
             image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
             title="Project 1"
@@ -109,11 +113,14 @@ const Projects = () => {
             buttonLink="#"
           />
         </div>
+
+        {/* Ligne décorative */}
         <img
           src={Vector}
-          alt="ligne vector décorative"
+          alt="Ligne décorative"
           ref={lineRef}
           className="relative mx-auto mt-10 h-[3px] w-full max-w-[95%] sm:max-w-[90%] md:max-w-[90%] lg:max-w-full"
+          aria-hidden="true"
         />
       </div>
     </section>
