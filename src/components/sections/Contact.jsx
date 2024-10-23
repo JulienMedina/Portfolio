@@ -78,7 +78,8 @@ const ContactSection = () => {
               <img
                 src={SmallStar}
                 alt="Petite étoile décorative"
-                className="absolute left-[45px] top-[-35px] w-1/3 mobile-sm:left-[40px] mobile-sm:top-[-50px] mobile-lg:left-[30px] mobile-lg:top-[-40px] sm:left-[20px] md:left-[49px] lg:left-[35px] xl:left-[45px]"
+                className="absolute left-[45px] top-[-35px] w-1/3 mobile-sm:left-[40px] mobile-sm:top-[-50px] mobile-lg:left-[30
+                px] mobile-lg:top-[-40px] sm:left-[20px] md:left-[49px] lg:left-[35px] xl:left-[45px]"
                 aria-hidden="true"
               />
             </div>
