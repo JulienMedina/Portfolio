@@ -5,6 +5,8 @@ import Vector from "../../assets/Vector.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import Portfolio from "../../assets/Portfolio.png";
+import CardBackground from "../../assets/CardBackground.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,16 +101,16 @@ const Projects = () => {
           ref={cardRef}
         >
           <Card
-            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            title="Project 1"
-            description="This is a description of Project 1."
+            image={Portfolio}
+            title="My Portfolio"
+            description=" This portfolio highlights my expertise in modern web technologies, from front-end to back-end, and presents my best projects, skills, and design concepts. Built with React, Tailwind, and Node.js, it embodies my passion for creating clean, responsive."
             buttonText="Learn More"
             buttonLink="#"
           />
           <Card
-            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            title="Project 2"
-            description="This is a description of Project 2."
+            image={CardBackground}
+            title="Final Project – DWWM Certification"
+            description="Collaborative web platform designed to connect players based on their preferences and availability. This project, presented during my DWWM certification, was developed as a team effort, with significant contribution from me on the back-end side, managing player interactions and the server architecture."
             buttonText="Learn More"
             buttonLink="#"
           />
