@@ -140,7 +140,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
           <ul className="flex space-x-10">
             <li>
               <a
-                href="#home"
+                href="#hero-title"
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4 "
                 aria-label="Accueil"
               >
