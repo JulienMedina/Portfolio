@@ -59,40 +59,38 @@ const ContactSection = () => {
       id="contact"
       className="relative flex items-center justify-center bg-black text-grayDark-12 md:min-h-screen"
     >
-      <div className="container relative mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-20">
-        {/* Left side content avec étoiles, texte et bouton */}
+      <div className="container relative mx-auto flex flex-col items-center justify-center px-4 md:flex-row md:items-start md:justify-between md:px-20">
+        {/* Contenu côté gauche avec étoiles, texte et bouton */}
         <div
           ref={textRef}
-          className="relative z-10 mb-20 flex flex-col items-center gap-4 md:mb-0 md:w-1/2"
+          className="relative z-10 mb-20 flex flex-col items-center gap-4 md:mb-0 md:w-1/2 md:items-start"
         >
-          <div className="flex items-center justify-center md:justify-start">
-            <div className="relative w-8 md:w-12 lg:w-16">
-              {/* Grande étoile avec ajustements responsives */}
-              <img
-                src={BigStar}
-                alt="Grande étoile décorative"
-                className="absolute left-[35px] top-[-30px] w-5 mobile-sm:left-[30px] mobile-sm:top-[-50px] mobile-lg:left-[20px]  mobile-lg:top-[-35px] sm:left-[28px] sm:w-7 lg:left-[10px] xl:left-[35px]"
-                aria-hidden="true"
-              />
-              {/* Petite étoile en diagonale avec ajustements responsives */}
-              <img
-                src={SmallStar}
-                alt="Petite étoile décorative"
-                className="absolute left-[45px] top-[-35px] w-1/3 mobile-sm:left-[40px] mobile-sm:top-[-50px] mobile-lg:left-[30
-                px] mobile-lg:top-[-40px] sm:left-[20px] md:left-[49px] lg:left-[35px] xl:left-[45px]"
-                aria-hidden="true"
-              />
-            </div>
-            <h2 className="ml-4 text-center text-4xl font-semibold text-grayDark-12 md:text-left md:text-5xl">
+          {/* Conteneur relatif pour les étoiles et le titre */}
+          <div className="relative w-full">
+            {/* Grande étoile */}
+            <img
+              src={BigStar}
+              alt="Grande étoile décorative"
+              className="absolute sm:left-[-40px] sm:top-0  mobile-lg:left-[10px] mobile-sm:hidden mobile-lg:block md:w-6 lg:w-8 "
+              aria-hidden="true"
+            />
+            {/* Petite étoile */}
+            <img
+              src={SmallStar}
+              alt="Petite étoile décorative"
+              className="absolute sm:left-[-25px] sm:top-[-10px]  w-4 mobile-sm:hidden mobile-lg:block mobile-lg:left-[30px] md:w-6 lg:w-5"
+              aria-hidden="true"
+            />
+            {/* Titre */}
+            <h2 className="text-center text-3xl font-semibold text-grayDark-12 md:text-left md:text-5xl">
               Have an idea about a project?
             </h2>
           </div>
-          <p className="mt-4 text-center text-lg text-grayDark-11">
-            "Have a project in mind or just want to say hello? Drop me a message
-            and let’s create something amazing together!"
+          {/* Paragraphe */}
+          <p className="mt-4 text-center text-lg text-grayDark-11 md:text-left">
+            Drop me a message and let’s create something amazing together!
           </p>
-
-          {/* Bouton positionné en dessous du texte */}
+          {/* Bouton */}
           <div
             ref={buttonRef}
             className="mt-6 flex justify-center md:justify-start"
@@ -105,12 +103,11 @@ const ContactSection = () => {
             </Button>
           </div>
         </div>
-
-        {/* Cross SVG côté droit */}
+        {/* SVG côté droit */}
         <img
           src={Cross}
           alt="SVG décoratif"
-          className="hidden w-full max-w-xs opacity-90 sm:block sm:max-w-xs md:max-w-md lg:max-w-sm xl:max-w-md"
+          className="hidden w-full max-w-xs opacity-90 md:block md:w-1/2 md:max-w-md lg:max-w-sm xl:max-w-md"
           aria-hidden="true"
         />
       </div>

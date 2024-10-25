@@ -64,19 +64,19 @@ const About = () => {
             <img
               src={ProfilePicture}
               alt="Portrait of Julien Medina"
-              className="h-[20rem] w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:h-[30rem] md:w-2/3 lg:w-1/2"
+              className="h-80 w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:h-[30rem] md:w-2/3 lg:w-1/2"
             />
           </div>
 
           {/* Texte de présentation (en dessous de l'image en mobile, à gauche en grand écran) */}
           <div
             ref={textRef}
-            className="order-2 w-full text-center md:order-1 md:pl-20 md:w-1/2 md:text-left"
+            className="order-2 w-full text-center md:order-1 md:w-1/2 md:pl-20 md:text-left"
           >
-            <h2 className="mb-4 text-center font-sans text-3xl font-semibold">
+            <h2 className="mb-4 text-center font-sans text-3xl font-semibold md:text-left">
               Get to know me better
             </h2>
-            <p className="mb-4 text-center font-sans text-lg text-grayDark-11">
+            <p className="mb-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
               I’m Julien, a passionate and motivated junior developer based in
               Paris. With a solid foundation in programming and problem-solving,
               I specialize in JavaScript, React, Node.js, and other
@@ -86,11 +86,11 @@ const About = () => {
               within a team, I am committed to building impactful and
               user-friendly solutions.
             </p>
-            <p className="text-center font-sans text-lg text-grayDark-11">
+            <p className="text-center font-sans text-lg text-grayDark-11 md:text-left">
               Looking forward to contributing to innovative projects and growing
               in the tech industry.
             </p>
-            <div className="mt-8 flex justify-center ">
+            <div className="mt-8 flex justify-center md:justify-start ">
               <Button href={CV} ariaLabel="Télécharger le CV de Julien Medina">
                 Download resume
               </Button>

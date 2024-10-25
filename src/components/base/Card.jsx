@@ -3,21 +3,14 @@ import Button from "./Button"; // Importation de ton bouton personnalisé
 
 const Card = ({ image, title, description, buttonText, buttonLink }) => {
   return (
-    <div className="card card-compact flex w-60 flex-col rounded-md border-2 border-solid border-grayDark-7 bg-grayDark-1 shadow-xl">
-      {/* Flexbox pour forcer la hauteur égale */}
-      <figure className="h-48 w-full overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="size-full object-cover hover:blur-sm"
-        />
+    <div className="card card-compact w-60 rounded-sm border-2 border-solid border-grayDark-7 bg-grayDark-1 shadow-xl md:w-96">
+      <figure>
+        <img src={image} alt={title} className=" hover:blur-sm" />
       </figure>
-      <div className="card-body flex grow flex-col justify-between">
-        <div>
-          <h2 className="card-title">{title}</h2>
-          <p className="text-sm text-grayDark-11">{description}</p>
-        </div>
-        <div className="card-actions mt-4 justify-end">
+      <div className="card-body">
+        <h2 className="card-title">{title}</h2>
+        <p>{description}</p>
+        <div className="card-actions justify-end">
           {/* Utilisation de ton composant Button à la place de celui de DaisyUI */}
           <Button href={buttonLink} ariaLabel={`Button for ${title}`}>
             {buttonText}

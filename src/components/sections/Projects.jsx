@@ -70,7 +70,7 @@ const Projects = () => {
 
   return (
     <section id="works" className="bg-grayDark-1 text-grayDark-12">
-      <div className="container mx-auto py-8 xl:pl-16">
+      <div className="container mx-auto px-4 py-8 xl:pl-16">
         {/* Alignement du SVG et du titre */}
         <div
           className="mb-8 flex items-center justify-center pr-12 md:justify-start"
@@ -80,7 +80,7 @@ const Projects = () => {
             <img
               src={PortalG}
               alt="Grande étoile décorative"
-              className="absolute left-[10px] top-[-20px] w-5 sm:w-7 sm:left-[28px]"
+              className="absolute left-[10px] top-[-20px] w-5 sm:left-[28px] sm:w-7"
               aria-hidden="true" // Cache pour les lecteurs d'écran
             />
             <img
@@ -103,14 +103,14 @@ const Projects = () => {
           <Card
             image={Portfolio}
             title="My Portfolio"
-            description=" This portfolio highlights my expertise in modern web technologies, from front-end to back-end, and presents my best projects, skills, and design concepts. Built with React, Tailwind, and Node.js, it embodies my passion for creating clean, responsive."
+            description=" This portfolio showcases my expertise in modern web technologies, spanning both front-end and back-end development. Built with React, Tailwind, and Node.js, it demonstrates my skills in creating clean, responsive, and user-centric designs, while highlighting my best projects and technical knowledge."
             buttonText="Learn More"
             buttonLink="#"
           />
           <Card
             image={CardBackground}
             title="Final Project – DWWM Certification"
-            description="Collaborative web platform designed to connect players based on their preferences and availability. This project, presented during my DWWM certification, was developed as a team effort, with significant contribution from me on the back-end side, managing player interactions and the server architecture."
+            description="Collaborative web platform developed to connect players based on their preferences and availability. This team project was presented during my DWWM certification, and I contributed significantly on the back-end, overseeing player interactions, managing the server architecture, and ensuring smooth data processing."
             buttonText="Learn More"
             buttonLink="#"
           />

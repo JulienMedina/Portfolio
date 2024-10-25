@@ -14,9 +14,9 @@ const frontEndSkills = [
 ];
 
 const backEndSkills = [
-  { label: "Node.js", bgColor: "bg-purple-200", textColor: "text-white" },
-  { label: "Express", bgColor: "bg-purple-200", textColor: "text-white" },
-  { label: "PostgreSQL", bgColor: "bg-purple-200", textColor: "text-white" },
+  { label: "Node.js", bgColor: "bg-purple-200", textColor: "text-black" },
+  { label: "Express", bgColor: "bg-purple-200", textColor: "text-black" },
+  { label: "PostgreSQL", bgColor: "bg-purple-200", textColor: "text-black" },
 ];
 
 const tools = [
