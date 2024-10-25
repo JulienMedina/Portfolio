@@ -103,14 +103,14 @@ const Projects = () => {
           <Card
             image={Portfolio}
             title="My Portfolio"
-            description=" This portfolio showcases my expertise in modern web technologies, spanning both front-end and back-end development. Built with React, Tailwind, and Node.js, it demonstrates my skills in creating clean, responsive, and user-centric designs, while highlighting my best projects and technical knowledge."
+            description="This portfolio showcases my skills in modern web technologies, highlighting my best projects and design concepts. Built with React, Tailwind, and animated with GSAP, it reflects my passion for creating clean, responsive web applications."
             buttonText="Learn More"
-            buttonLink="#"
+            buttonLink="https://github.com/JulienMedina/Portfolio"
           />
           <Card
             image={CardBackground}
             title="Final Project – DWWM Certification"
-            description="Collaborative web platform developed to connect players based on their preferences and availability. This team project was presented during my DWWM certification, and I contributed significantly on the back-end, overseeing player interactions, managing the server architecture, and ensuring smooth data processing."
+            description="A collaborative web platform designed to connect players based on their preferences and availability. Presented during my DWWM certification, I contributed significantly to the back-end, managing player interactions, server architecture, and a dedicated API."
             buttonText="Learn More"
             buttonLink="#"
           />
