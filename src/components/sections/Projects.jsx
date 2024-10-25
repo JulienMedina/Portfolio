@@ -104,15 +104,15 @@ const Projects = () => {
             image={Portfolio}
             title="My Portfolio"
             description="This portfolio showcases my skills in modern web technologies, highlighting my best projects and design concepts. Built with React, Tailwind, and animated with GSAP, it reflects my passion for creating clean, responsive web applications."
-            buttonText="Learn More"
+            buttonText="View on GitHub"
             buttonLink="https://github.com/JulienMedina/Portfolio"
           />
           <Card
             image={CardBackground}
             title="Final Project – DWWM Certification"
             description="A collaborative web platform designed to connect players based on their preferences and availability. Presented during my DWWM certification, I contributed significantly to the back-end, managing player interactions, server architecture, and a dedicated API."
-            buttonText="Learn More"
-            buttonLink="#"
+            buttonText="View on GitHub"
+            buttonLink="https://github.com/JulienMedina/DWWM-back"
           />
         </div>
 
