@@ -15,7 +15,7 @@ Bienvenue sur mon portfolio ! Ce projet est conçu pour présenter mon parcours,
 - **Compétences** : Mes technologies principales, affichées avec des icônes et badges.
 - **Contact** : Formulaire de contact mailto.
 
-## 🖼️ Aperçu
+
 ## 🖼️ Aperçu
 
 Pour découvrir mon portfolio en action, visitez le site : [Mon Portfolio](https://julienmedina.com)
