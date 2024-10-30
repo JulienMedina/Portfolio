@@ -1,4 +1,4 @@
-import ProfilePicture from "../../assets/ProfilPicture2.png";
+import ProfilePicture from "../../assets/ProfilPicture2.webp";
 import CV from "../../assets/CV.pdf";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";

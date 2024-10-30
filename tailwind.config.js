@@ -31,7 +31,7 @@ export default {
         "Button-color1": "#fe7a2d",
       },
       fontFamily: {
-        sans: ["Inter var", "ui-sans-serif", "system-ui"],
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
         mono: ['"PT Mono"', "monospace"], // Ajout d'Inter et de polices de fallback
       },
       dropShadow: {

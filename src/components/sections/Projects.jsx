@@ -5,8 +5,8 @@ import Vector from "../../assets/Vector.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import Portfolio from "../../assets/Portfolio.png";
-import CardBackground from "../../assets/CardBackground.png";
+import Portfolio from "../../assets/Portfolio.webp";
+import CardBackground from "../../assets/CardBackground.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
