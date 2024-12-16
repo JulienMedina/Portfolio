@@ -5,8 +5,9 @@ import Vector from "../../assets/Vector.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import Portfolio from "../../assets/Portfolio.webp";
-import CardBackground from "../../assets/CardBackground.webp";
+import Portfolio from "../../assets/images/Portfolio.webp";
+import CardBackground from "../../assets/images/CardBackground.webp";
+import ArtPortfolio from "../../assets/images/ArtPortfolio.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,6 +114,13 @@ const Projects = () => {
             description="A collaborative web platform designed to connect players based on their preferences and availability. Presented during my DWWM certification, I contributed significantly to the back-end, managing player interactions, server architecture, and a dedicated API."
             buttonText="View on GitHub"
             buttonLink="https://github.com/JulienMedina/DWWM-back"
+          />
+          <Card
+            image={ArtPortfolio}
+            title="Artist Portfolio"
+            description="A modern showcase website designed to highlight an artist's work and exhibitions. I built the back-end with Strapi and developed a Next.js front-end featuring dynamic galleries, GSAP animations, and a Nodemailer-powered contact form."
+            buttonText="View on GitHub"
+            buttonLink="https://github.com/Charlie-Gauvin/art-porfolio-frontend"
           />
         </div>
 
