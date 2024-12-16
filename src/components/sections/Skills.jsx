@@ -11,12 +11,16 @@ const frontEndSkills = [
   { label: "CSS", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "React", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "Tailwind", bgColor: "bg-yellow-300", textColor: "text-black" },
+  { label: "JavaScript", bgColor: "bg-yellow-300", textColor: "text-black" },
+  { label: "TypeScript", bgColor: "bg-yellow-300", textColor: "text-black" },
+  { label: "Next.js", bgColor: "bg-yellow-300", textColor: "text-black" },
 ];
 
 const backEndSkills = [
   { label: "Node.js", bgColor: "bg-purple-200", textColor: "text-black" },
   { label: "Express", bgColor: "bg-purple-200", textColor: "text-black" },
   { label: "PostgreSQL", bgColor: "bg-purple-200", textColor: "text-black" },
+  { label: "Strapi", bgColor: "bg-purple-200", textColor: "text-black" },
 ];
 
 const tools = [
