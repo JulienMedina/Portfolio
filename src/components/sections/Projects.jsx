@@ -118,7 +118,7 @@ const Projects = () => {
           <Card
             image={ArtPortfolio}
             title="Artist Portfolio"
-            description="A modern showcase website designed to highlight a contemporary artist’s work and exhibitions. I developed the full-stack solution, using Strapi for intuitive content management and Next.js for SEO optimization and performance. The site includes a dynamic gallery for available and sold artworks, dedicated pages for upcoming and past exhibitions, and a contact form powered by Nodemailer. Subtle GSAP animations add visual appeal, while deployment on Vercel and Render ensures reliability and speed."
+            description="A modern showcase website designed to highlight an artist's work and exhibitions. I built the back-end with Strapi and developed a Next.js front-end featuring dynamic galleries, GSAP animations, and a Nodemailer-powered contact form."
             buttonText="View on GitHub"
             buttonLink="https://github.com/Charlie-Gauvin/art-porfolio-frontend"
           />
