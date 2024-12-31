@@ -1,7 +1,7 @@
 import Button from "../base/Button";
-import SmallStar from "../../assets/Portal.svg";
-import BigStar from "../../assets/PortalG.svg";
-import Cross from "../../assets/Cross.svg";
+import SmallStar from "../../assets/svg/Portal.svg";
+import BigStar from "../../assets/svg/PortalG.svg";
+import Cross from "../../assets/svg/Cross.svg";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

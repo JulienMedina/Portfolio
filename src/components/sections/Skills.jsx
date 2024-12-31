@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import Divider from "../../assets/Divider.svg";
+import Divider from "../../assets/svg/Divider.svg";
 import Badge from "../base/Badge";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,8 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const frontEndSkills = [
-  { label: "HTML", bgColor: "bg-yellow-300", textColor: "text-black" },
-  { label: "CSS", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "React", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "Tailwind", bgColor: "bg-yellow-300", textColor: "text-black" },
   { label: "JavaScript", bgColor: "bg-yellow-300", textColor: "text-black" },

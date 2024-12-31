@@ -1,7 +1,7 @@
 import Card from "../base/Card";
-import PortalG from "../../assets/PortalG.svg";
-import SmallStar from "../../assets/Portal.svg";
-import Vector from "../../assets/Vector.svg";
+import PortalG from "../../assets/svg/PortalG.svg";
+import SmallStar from "../../assets/svg/Portal.svg";
+import Vector from "../../assets/svg/Vector.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";

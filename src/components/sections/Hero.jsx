@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { gsap } from "gsap";
 import Button from "../base/Button";
-import Ellipse from "../../assets/Ellipse.svg";
+import Ellipse from "../../assets/svg/Ellipse.svg";
 import DiagonalLinesSVGComponent from "../base/DiagonalLinesSVGComponent";
 
 const Hero = ({ isNavOpen }) => {

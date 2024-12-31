@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { gsap } from "gsap";
-import DiagonalLinesSVG from "../../assets/Group.svg";
+import DiagonalLinesSVG from "../../assets/svg/Group.svg";
 
 const DiagonalLinesSVGComponent = ({ startX, startY, delay, duration }) => {
   const svgRef = useRef(null);
