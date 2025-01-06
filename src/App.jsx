@@ -6,17 +6,22 @@ import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 import { useState } from "react";
 import Skills from "./components/sections/Skills";
+import HeroScene from "./components/layout/HeroScene";
 
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <div className="relative flex min-h-screen flex-col bg-black">
+      <div className="absolute inset-0 z-20 ">
+        <HeroScene />
+      </div>
       {/* Header */}
       <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+      {/* Hero avec scène en arrière-plan */}
 
       {/* Main content */}
-      <main className="pt-5 xl:pt-40 ">
+      <main className="relative z-10 pt-5 xl:pt-40">
         {" "}
         {/* Utiliser flex grow pour occuper tout l'espace */}
         <Hero isNavOpen={isNavOpen} />

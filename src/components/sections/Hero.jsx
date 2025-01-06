@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { gsap } from "gsap";
 import Button from "../base/Button";
-import Ellipse from "../../assets/svg/Ellipse.svg";
+import Ellipse from "../../assets/svg/Ellipse.min.svg";
 import DiagonalLinesSVGComponent from "../base/DiagonalLinesSVGComponent";
 
 const Hero = ({ isNavOpen }) => {
@@ -34,13 +34,13 @@ const Hero = ({ isNavOpen }) => {
     // Animation GSAP pour le titre
     gsap.fromTo(
       titleRef.current.children,
-      { y: -100, opacity: 0 },
+      { y: -50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 2,
+        duration: 1,
         ease: "power1.out",
-        stagger: 0.1,
+        stagger: 0.05,
       }
     );
   }, []);
@@ -67,7 +67,10 @@ const Hero = ({ isNavOpen }) => {
       <img
         src={Ellipse}
         alt="Ellipse décorative"
-        aria-hidden="true" // Cache l'élément pour les lecteurs d'écran
+        aria-hidden="true"
+        width="1200" // Ajoute une largeur explicite
+        height="800" // Ajoute une hauteur explicite
+        loading="lazy" // Charge de manière différée
         className="absolute left-1/2 top-56 z-0 h-auto w-[120%] -translate-x-1/2 md:w-4/5 lg:top-20 lg:w-3/4"
       />
 
