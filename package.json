@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^9.120.5",
     "@react-three/fiber": "^8.17.10",
+    "@react-three/postprocessing": "^2.19.0",
     "daisyui": "^4.12.10",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "gsap": "^3.12.5",

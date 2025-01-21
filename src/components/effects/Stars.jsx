@@ -6,9 +6,9 @@ import * as random from "maath/random";
 export default function Stars(props) {
   const ref = useRef();
 
-  // Générer les positions aléatoires dans une sphère avec `maath`
+  // Générer les positions aléatoires dans une sphère avec maath
   const sphere = useMemo(
-    () => random.inSphere(new Float32Array(5000), { radius: 1.5 }),
+    () => random.inCircle(new Float32Array(2000), { radius: 0.7 }),
     []
   );
 

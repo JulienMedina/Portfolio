@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, memo } from "react";
 import Divider from "../../assets/svg/Divider.svg";
 import Badge from "../base/Badge";
 import { gsap } from "gsap";
@@ -35,7 +35,7 @@ const softSkills = [
   { label: "Curiosity", bgColor: "bg-purple-200", textColor: "text-black" },
 ];
 
-const SkillsSection = () => {
+const SkillsSection = React.memo(function SkillsSection() {
   const lineRefs = useRef([]);
   const textRef = useRef(null);
 
@@ -111,6 +111,7 @@ const SkillsSection = () => {
           ref={(el) => (lineRefs.current[0] = el)}
           className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
           aria-hidden="true"
+          loading="lazy"
         />
 
         {/* Back-end skills */}
@@ -135,6 +136,7 @@ const SkillsSection = () => {
           ref={(el) => (lineRefs.current[1] = el)}
           className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
           aria-hidden="true"
+          loading="lazy"
         />
 
         {/* Outils */}
@@ -159,6 +161,7 @@ const SkillsSection = () => {
           ref={(el) => (lineRefs.current[2] = el)}
           className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
           aria-hidden="true"
+          loading="lazy"
         />
 
         {/* Soft Skills */}
@@ -180,6 +183,6 @@ const SkillsSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default SkillsSection;

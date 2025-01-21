@@ -1,7 +1,14 @@
+import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button"; // Importation de ton bouton personnalisé
 
-const Card = ({ image, title, description, buttonText, buttonLink }) => {
+const Card = React.memo(function Card({
+  image,
+  title,
+  description,
+  buttonText,
+  buttonLink,
+}) {
   return (
     <div className="card card-compact w-60 rounded-sm border-2 border-solid border-grayDark-7 bg-grayDark-1 shadow-xl md:w-96">
       <figure className="h-48 w-full overflow-hidden">
@@ -9,6 +16,7 @@ const Card = ({ image, title, description, buttonText, buttonLink }) => {
           src={image}
           alt={title}
           className=" size-full object-cover hover:blur-sm"
+          loading="lazy"
         />
       </figure>
       <div className="card-body">
@@ -23,7 +31,7 @@ const Card = ({ image, title, description, buttonText, buttonLink }) => {
       </div>
     </div>
   );
-};
+});
 
 Card.propTypes = {
   image: PropTypes.string.isRequired, // Lien vers l'image
