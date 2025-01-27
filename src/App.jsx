@@ -17,7 +17,7 @@ function App() {
       <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
       {/* Main content */}
-      <main className="relative z-10 pt-5 ">
+      <main className="relative z-10  ">
         <Hero isNavOpen={isNavOpen} />
         <Projects />
         <About />

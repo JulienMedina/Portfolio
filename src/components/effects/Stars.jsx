@@ -6,34 +6,33 @@ import * as random from "maath/random";
 export default function Stars(props) {
   const ref = useRef();
 
-  // Générer les positions aléatoires dans une sphère avec maath
-  const sphere = useMemo(
-    () => random.inCircle(new Float32Array(2000), { radius: 0.7 }),
-    []
-  );
+  // Générer positions en 3D ou 2D suivant ce que tu veux (inSphere, inCircle…)
+  const positions = useMemo(() => {
+    return random.inCircle(new Float32Array(2500 * 3), { radius: 0.7 });
+  }, []);
 
-  // Animation des étoiles
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      // Petit mouvement
+      ref.current.rotation.x -= delta * 0.02;
+      ref.current.rotation.y -= delta * 0.03;
     }
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
+    <group rotation={[0, 0, 0]}>
       <Points
         ref={ref}
-        positions={sphere} // Utilisation correcte de 'positions'
+        positions={positions}
         stride={3}
         frustumCulled={false}
         {...props}
       >
         <PointMaterial
           transparent
-          color="#ffa0e0"
+          color="#00f3ff"
           size={0.002}
-          sizeAttenuation={true}
+          sizeAttenuation
           depthWrite={false}
         />
       </Points>

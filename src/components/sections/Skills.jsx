@@ -26,6 +26,12 @@ const tools = [
   { label: "GitHub", bgColor: "bg-Button-color1", textColor: "text-black" },
   { label: "Docker", bgColor: "bg-Button-color1", textColor: "text-black" },
   { label: "Figma", bgColor: "bg-Button-color1", textColor: "text-black" },
+  { label: "GSAP", bgColor: "bg-Button-color1", textColor: "text-black" },
+  {
+    label: "React Three Fiber",
+    bgColor: "bg-Button-color1",
+    textColor: "text-black",
+  },
 ];
 
 const softSkills = [
@@ -81,7 +87,7 @@ const SkillsSection = React.memo(function SkillsSection() {
       id="skills"
       className="min-h-screen bg-grayDark-1 py-12 text-grayDark-12"
     >
-      <div className="container mx-auto justify-items-center px-20">
+      <div className="container mx-auto  px-20">
         <h2
           ref={textRef}
           className="mb-8 text-center font-sans text-4xl font-semibold"
@@ -115,7 +121,7 @@ const SkillsSection = React.memo(function SkillsSection() {
         />
 
         {/* Back-end skills */}
-        <div className="mb-8">
+        <div className="mb-8 text-left">
           <h3 className="mb-4 text-lg font-bold text-grayDark-11">Back-end</h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {backEndSkills.map((skill) => (
