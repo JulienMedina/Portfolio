@@ -1,5 +1,5 @@
 import ProfilePicture from "../../assets/images/ProfilPicture2.webp";
-import CV from "../../assets/CV/CV.pdf";
+import CV from "../../assets/CV/CV Julien Medina alternance.pdf";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import du plugin
