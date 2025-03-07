@@ -30,7 +30,7 @@ const Card = React.memo(function Card({
         <div className="card-actions flex flex-wrap justify-center gap-2 md:justify-end">
           <Button
             href={buttonLink}
-            ariaLabel={`GitHub link for ${title}`}
+            ariaLabel={`Lien GitHub pour ${title}`}
             variant="filled"
             className="flex-1 text-center"
           >
@@ -39,11 +39,11 @@ const Card = React.memo(function Card({
           {demoLink && (
             <Button
               href={demoLink}
-              ariaLabel={`Live demo for ${title}`}
+              ariaLabel={`Voir la démo de ${title}`}
               variant="outline"
               className="flex-1 text-center"
             >
-              Live Demo
+              Voir la démo
             </Button>
           )}
         </div>

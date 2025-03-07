@@ -18,7 +18,6 @@ const Projects = () => {
   const lineRef = useRef(null);
 
   useEffect(() => {
-    // Animation des cartes
     gsap.fromTo(
       cardRef.current.children,
       { opacity: 0, x: -50 },
@@ -27,7 +26,7 @@ const Projects = () => {
         x: 0,
         duration: 1.5,
         ease: "power1.out",
-        stagger: 0.2, // Animation en cascade pour les cartes
+        stagger: 0.2,
         scrollTrigger: {
           trigger: cardRef.current,
           start: "top 80%",
@@ -36,7 +35,6 @@ const Projects = () => {
       }
     );
 
-    // Animation du texte
     gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -53,7 +51,6 @@ const Projects = () => {
       }
     );
 
-    // Animation de la ligne vectorielle
     gsap.fromTo(
       lineRef.current,
       { scaleX: 0, transformOrigin: "center" },
@@ -73,7 +70,6 @@ const Projects = () => {
   return (
     <section id="works" className="bg-grayDark-1 text-grayDark-12">
       <div className="container mx-auto px-4 py-8 xl:pl-16">
-        {/* Alignement du SVG et du titre */}
         <div
           className="mb-8 flex items-center justify-center pr-12 md:justify-start"
           ref={textRef}
@@ -83,7 +79,7 @@ const Projects = () => {
               src={PortalG}
               alt="Grande étoile décorative"
               className="absolute left-[10px] top-[-20px] w-5 sm:left-[28px] sm:w-7"
-              aria-hidden="true" // Cache pour les lecteurs d'écran
+              aria-hidden="true"
             />
             <img
               src={SmallStar}
@@ -93,11 +89,10 @@ const Projects = () => {
             />
           </div>
           <h2 className="text-center font-sans text-2xl font-semibold text-grayDark-12 md:text-left md:text-4xl">
-            My Work
+            Mes projets
           </h2>
         </div>
 
-        {/* Contenu des cartes */}
         <div
           className="flex flex-col items-stretch gap-8 py-8 md:flex-row md:items-stretch md:justify-center md:px-8 lg:px-12 xl:py-16"
           ref={cardRef}
@@ -105,25 +100,25 @@ const Projects = () => {
           <Card
             className="h-full"
             image={Portfolio}
-            title="My Portfolio"
-            description="A modern, interactive portfolio showcasing my best web projects and design concepts. Built with React, styled using Tailwind CSS, and animated with GSAP, it reflects my passion for clean code and responsive design."
-            buttonText="View on GitHub"
+            title="Mon Portfolio"
+            description="Un portfolio moderne et interactif mettant en valeur mes meilleurs projets web et concepts de design. Construit avec React, stylisé avec Tailwind CSS et animé avec GSAP, il reflète ma passion pour un code propre et un design responsive."
+            buttonText="Lien GitHub"
             buttonLink="https://github.com/JulienMedina/Portfolio"
           />
           <Card
             className="h-full"
             image={CardBackground}
             title="API"
-            description="A collaborative platform connecting players based on their preferences and availability. I developed the back-end, built a RESTful API, managed server architecture, and ensured smooth user interactions. Presented as my final DWWM certification project."
-            buttonText="View on GitHub"
+            description="Une plateforme collaborative connectant des joueurs selon leurs préférences et disponibilités. J'ai développé le back-end, construit une API RESTful, géré l'architecture serveur et assuré des interactions fluides. Projet final de certification DWWM."
+            buttonText="Lien GitHub"
             buttonLink="https://github.com/JulienMedina/DWWM-back"
           />
           <Card
             className="h-full"
             image={ArtPortfolio}
-            title="Artist Portfolio"
-            description="A modern website highlighting an artist's portfolio and exhibitions. Developed with a Strapi back-end and a Next.js front-end featuring dynamic galleries, smooth GSAP animations, and an integrated contact form powered by Nodemailer."
-            buttonText="View on GitHub"
+            title="Portfolio Artistique"
+            description="Un site moderne mettant en valeur le portfolio et les expositions d'un artiste. Développé avec un back-end Strapi et un front-end Next.js comportant des galeries dynamiques, des animations GSAP fluides et un formulaire de contact intégré propulsé par Nodemailer."
+            buttonText="Lien GitHub"
             buttonLink="https://github.com/Charlie-Gauvin/art-porfolio-frontend"
             demoLink="https://www.patrickgauvinart.com/"
           />
@@ -131,14 +126,13 @@ const Projects = () => {
             className="h-full"
             image={Dashboard}
             title="Dashboard"
-            description="This project is a solution for Frontend Mentor's Time Tracking Dashboard  challenge. It’s an interactive dashboard displaying activity stats with filters for daily, weekly, and monthly data."
-            buttonText="View on GitHub"
+            description="Ce projet est une solution au challenge 'Time Tracking Dashboard' de Frontend Mentor. Il s'agit d'un tableau de bord interactif affichant des statistiques d'activité avec des filtres pour les données quotidiennes, hebdomadaires et mensuelles."
+            buttonText="Lien GitHub"
             buttonLink="https://github.com/JulienMedina/time-tracking-dashboard"
             demoLink="https://julienmedina.github.io/time-tracking-dashboard/"
           />
         </div>
 
-        {/* Ligne décorative */}
         <img
           src={Vector}
           alt="Ligne décorative"

@@ -2,18 +2,16 @@ import ProfilePicture from "../../assets/images/ProfilPicture2.webp";
 import CV from "../../assets/CV/CV Julien Medina alternance.pdf";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import du plugin
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../base/Button";
-// Register ScrollTrigger avec GSAP
+
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const imgRef = useRef(null);
   const textRef = useRef(null);
 
-  // Animation pour l'image et le texte déclenchée au scroll
   useEffect(() => {
-    // Animation pour le texte (à gauche)
     gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -23,14 +21,13 @@ const About = () => {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: textRef.current, // L'élément qui déclenche l'animation
-          start: "top 80%", // Démarre quand l'élément atteint 80% de la fenêtre
-          toggleActions: "play none none none", // Joue l'animation à l'arrivée
+          trigger: textRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       }
     );
 
-    // Animation pour l'image (à droite)
     gsap.fromTo(
       imgRef.current,
       { opacity: 0, y: 50 },
@@ -41,8 +38,8 @@ const About = () => {
         ease: "power3.out",
         delay: 0.5,
         scrollTrigger: {
-          trigger: imgRef.current, // L'élément qui déclenche l'animation
-          start: "top 80%", // Démarre quand l'élément atteint 80% de la fenêtre
+          trigger: imgRef.current,
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       }
@@ -56,47 +53,49 @@ const About = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center md:flex-row md:space-x-12">
-          {/* Image stylisée (au-dessus du texte en mobile, à droite en grand écran) */}
           <div
             className="order-1 mt-8 flex w-full justify-center pb-10 md:order-2 md:mt-0 md:w-1/2"
             ref={imgRef}
           >
             <img
               src={ProfilePicture}
-              alt="Portrait of Julien Medina"
+              alt="Portrait de Julien Medina"
               className="h-80 w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:h-[30rem] md:w-2/3 lg:w-1/2"
             />
           </div>
 
-          {/* Texte de présentation (en dessous de l'image en mobile, à gauche en grand écran) */}
           <div
             ref={textRef}
             className="order-2 w-full text-center md:order-1 md:w-1/2 md:pl-20 md:text-left"
           >
             <h2 className="mb-4 text-center font-sans text-3xl font-semibold md:text-left">
-              Get to know me better
+              À propos de moi
             </h2>
             <p className="mb-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
-              I’m Julien, a passionate and motivated junior developer based in
-              Paris. With a solid foundation in programming and problem-solving,
-              I specialize in JavaScript, React, Node.js, and other
-              technologies. Eager to apply my skills in real-world projects, I
-              focus on writing clean, efficient code and constantly learning new
-              technologies. Whether working independently or collaborating
-              within a team, I am committed to building impactful and
-              user-friendly solutions.
+              Ancien militaire reconverti dans le développement web, je suis
+              aujourd&apos;hui développeur web junior spécialisé en JavaScript,
+              React, Node.js et Tailwind CSS. Fraîchement diplômé de l'école
+              O'clock, je conçois des applications web modernes, performantes et
+              animées grâce à GSAP.
             </p>
             <p className="text-center font-sans text-lg text-grayDark-11 md:text-left">
-              Looking forward to contributing to innovative projects and growing
-              in the tech industry.
+              Mon parcours atypique m'a permis de développer une forte capacité
+              d&apos;adaptation, une grande rigueur et un goût prononcé pour le
+              travail bien fait. Je suis curieux, autonome et toujours en veille
+              sur les dernières tendances du web et de l'IA.
             </p>
-            <div className="mt-8 flex justify-center md:justify-start ">
+            <p className="mt-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
+              Actuellement à la recherche d'opportunités pour mettre mes
+              compétences à profit, je suis disponible pour échanger sur vos
+              projets web ou collaborer ensemble sur des idées innovantes.
+            </p>
+            <div className="mt-8 flex justify-center md:justify-start">
               <Button
                 href={CV}
                 ariaLabel="Télécharger le CV de Julien Medina"
                 variant="outline"
               >
-                Download resume
+                Télécharger mon CV
               </Button>
             </div>
           </div>

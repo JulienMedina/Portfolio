@@ -37,8 +37,8 @@ const tools = [
 const softSkills = [
   { label: "Communication", bgColor: "bg-green-200", textColor: "text-black" },
   { label: "Collaboration", bgColor: "bg-yellow-200", textColor: "text-black" },
-  { label: "Autonomy", bgColor: "bg-red-200", textColor: "text-black" },
-  { label: "Curiosity", bgColor: "bg-purple-200", textColor: "text-black" },
+  { label: "Autonomie", bgColor: "bg-red-200", textColor: "text-black" },
+  { label: "Curiosité", bgColor: "bg-purple-200", textColor: "text-black" },
 ];
 
 const SkillsSection = React.memo(function SkillsSection() {
@@ -46,7 +46,6 @@ const SkillsSection = React.memo(function SkillsSection() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    // Animation des lignes décoratives
     lineRefs.current.forEach((line) => {
       gsap.fromTo(
         line,
@@ -58,13 +57,12 @@ const SkillsSection = React.memo(function SkillsSection() {
           scrollTrigger: {
             trigger: line,
             start: "top 80%",
-            toggleActions: "play none none none", // Animation unique
+            toggleActions: "play none none none",
           },
         }
       );
     });
 
-    // Animation du titre
     gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -74,9 +72,9 @@ const SkillsSection = React.memo(function SkillsSection() {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: textRef.current, // L'élément qui déclenche l'animation
-          start: "top 80%", // Démarre quand l'élément atteint 80% de la fenêtre
-          toggleActions: "play none none none", // Joue l'animation à l'arrivée
+          trigger: textRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       }
     );
@@ -87,12 +85,12 @@ const SkillsSection = React.memo(function SkillsSection() {
       id="skills"
       className="min-h-screen bg-grayDark-1 py-12 text-grayDark-12"
     >
-      <div className="container mx-auto  px-20">
+      <div className="container mx-auto px-20">
         <h2
           ref={textRef}
           className="mb-8 text-center font-sans text-4xl font-semibold"
         >
-          My Toolbox
+          Ma boîte à outils
         </h2>
 
         {/* Front-end skills */}
@@ -147,7 +145,7 @@ const SkillsSection = React.memo(function SkillsSection() {
 
         {/* Outils */}
         <div className="mb-8">
-          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Tools</h3>
+          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Outils</h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {tools.map((tool) => (
               <Badge
@@ -173,7 +171,7 @@ const SkillsSection = React.memo(function SkillsSection() {
         {/* Soft Skills */}
         <div className="mb-8">
           <h3 className="mb-4 text-lg font-bold text-grayDark-11">
-            Soft Skills
+            Compétences personnelles
           </h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {softSkills.map((softSkill) => (

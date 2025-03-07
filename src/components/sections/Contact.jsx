@@ -13,7 +13,6 @@ const ContactSection = () => {
   const buttonRef = useRef(null);
 
   useEffect(() => {
-    // Animation pour le texte (arrivée par la gauche)
     const textAnim = gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -30,7 +29,6 @@ const ContactSection = () => {
       }
     );
 
-    // Animation pour le bouton (arrivée par le bas)
     const buttonAnim = gsap.fromTo(
       buttonRef.current,
       { opacity: 0, y: 50 },
@@ -47,7 +45,6 @@ const ContactSection = () => {
       }
     );
 
-    // Nettoyage des animations pour éviter les fuites de mémoire
     return () => {
       textAnim.kill();
       buttonAnim.kill();
@@ -60,37 +57,31 @@ const ContactSection = () => {
       className="relative flex items-center justify-center bg-black text-grayDark-12 md:min-h-screen"
     >
       <div className="container relative mx-auto flex flex-col items-center justify-center px-4 md:flex-row md:items-start md:justify-between md:px-20">
-        {/* Contenu côté gauche avec étoiles, texte et bouton */}
         <div
           ref={textRef}
           className="relative z-10 mb-20 flex flex-col items-center gap-4 md:mb-0 md:w-1/2 md:items-start"
         >
-          {/* Conteneur relatif pour les étoiles et le titre */}
           <div className="relative w-full">
-            {/* Grande étoile */}
             <img
               src={BigStar}
               alt="Grande étoile décorative"
-              className="absolute mobile-sm:hidden mobile-lg:left-[10px]  mobile-lg:block sm:left-[-40px] sm:top-0 md:w-6 lg:w-8 "
+              className="absolute mobile-sm:hidden mobile-lg:left-[10px] mobile-lg:block sm:left-[-40px] sm:w-7 md:w-6 lg:w-8"
               aria-hidden="true"
             />
-            {/* Petite étoile */}
             <img
               src={SmallStar}
               alt="Petite étoile décorative"
-              className="absolute w-4 mobile-sm:hidden  mobile-lg:left-[30px] mobile-lg:block sm:left-[-25px] sm:top-[-10px] md:w-6 lg:w-5"
+              className="absolute w-4 mobile-sm:hidden mobile-lg:left-[30px] mobile-lg:block sm:left-[-25px] sm:top-[-10px] md:w-6 lg:w-5"
               aria-hidden="true"
             />
-            {/* Titre */}
             <h2 className="text-center text-3xl font-semibold text-grayDark-12 md:text-left md:text-5xl">
-              Have an idea about a project?
+              Une idée de projet ?
             </h2>
           </div>
-          {/* Paragraphe */}
           <p className="mt-4 text-center text-lg text-grayDark-11 md:text-left">
-            Drop me a message and let’s create something amazing together!
+            Envoyez-moi un message et créons ensemble quelque chose d'incroyable
+            !
           </p>
-          {/* Bouton */}
           <div
             ref={buttonRef}
             className="mt-6 flex justify-center md:justify-start"
@@ -100,11 +91,10 @@ const ContactSection = () => {
               ariaLabel="Contacter Julien Medina"
               variant="outline"
             >
-              /Send me an email
+              /Envoyez-moi un email
             </Button>
           </div>
         </div>
-        {/* SVG côté droit */}
         <img
           src={Cross}
           alt="SVG décoratif"

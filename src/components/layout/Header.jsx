@@ -3,19 +3,17 @@ import PropTypes from "prop-types";
 import Button from "../base/Button";
 
 const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
-  // Empêcher le scroll lorsque le menu est ouvert
   useEffect(() => {
     if (isNavOpen) {
-      document.body.classList.add("overflow-hidden"); // Ajout de classe
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove("overflow-hidden"); // Retrait de classe
+      document.body.classList.remove("overflow-hidden");
     }
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
   }, [isNavOpen]);
 
-  // Fonction pour fermer le menu après un clic sur un lien
   const handleLinkClick = () => {
     setIsNavOpen(false);
   };
@@ -28,7 +26,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
-          className=" font-mono text-xl text-grayDark-12"
+          className="font-mono text-xl text-grayDark-12"
           aria-label="Initiales JM"
         >
           Julien Medina
@@ -37,7 +35,6 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
         {/* Navigation pour mobile */}
         <nav>
           <section className="flex lg:hidden">
-            {/* Affichage conditionnel : burger ou croix */}
             <div
               className="z-50 cursor-pointer space-y-2"
               onClick={() => setIsNavOpen((prev) => !prev)}
@@ -67,7 +64,6 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
               )}
             </div>
 
-            {/* Overlay pour fermer le menu en cliquant en dehors */}
             {isNavOpen && (
               <div
                 className="fixed inset-0 z-40 bg-grayDark-1 opacity-50"
@@ -75,7 +71,6 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
               />
             )}
 
-            {/* Menu mobile */}
             <div
               className={`absolute left-0 top-12 z-50 h-screen w-full bg-black text-grayDark-12 transition-transform duration-1000 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
@@ -88,7 +83,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     className="text-xl"
                     onClick={handleLinkClick}
                   >
-                    /Home
+                    /Accueil
                   </a>
                 </li>
                 <li>
@@ -97,7 +92,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     className="text-xl"
                     onClick={handleLinkClick}
                   >
-                    /About
+                    /À propos
                   </a>
                 </li>
                 <li>
@@ -106,7 +101,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     className="text-xl"
                     onClick={handleLinkClick}
                   >
-                    /Works
+                    /Projets
                   </a>
                 </li>
                 <li>
@@ -115,10 +110,9 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     className="text-xl"
                     onClick={handleLinkClick}
                   >
-                    /Skills
+                    /Compétences
                   </a>
                 </li>
-                {/* Bouton "Contact me" dans le menu burger */}
                 <div className="mt-4 flex justify-center">
                   <Button
                     href="#contact"
@@ -126,7 +120,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     variant="outline"
                     onClick={handleLinkClick}
                   >
-                    /Contact me
+                    /Contact
                   </Button>
                 </div>
               </ul>
@@ -136,7 +130,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
 
         {/* Navigation pour grands écrans */}
         <nav
-          aria-label="Main Navigation"
+          aria-label="Navigation principale"
           className="hidden grow justify-center lg:flex"
         >
           <ul className="flex space-x-10">
@@ -146,7 +140,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Accueil"
               >
-                /Home
+                /Accueil
               </a>
             </li>
             <li>
@@ -155,7 +149,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="À propos"
               >
-                /About
+                /À propos
               </a>
             </li>
             <li>
@@ -164,7 +158,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Projets"
               >
-                /Works
+                /Projets
               </a>
             </li>
             <li>
@@ -173,20 +167,20 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                 className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
                 aria-label="Compétences"
               >
-                /Skills
+                /Compétences
               </a>
             </li>
           </ul>
         </nav>
 
-        {/* Bouton "Work with me" à droite */}
+        {/* Bouton "Contact" à droite */}
         <div className="ml-4 hidden lg:block">
           <Button
             href="#contact"
             ariaLabel="Contacter Julien Medina"
             variant="outline"
           >
-            /Contact me
+            /Contact
           </Button>
         </div>
       </div>
