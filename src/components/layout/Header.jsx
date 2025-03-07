@@ -123,6 +123,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                   <Button
                     href="#contact"
                     ariaLabel="Contacter Julien Medina"
+                    variant="outline"
                     onClick={handleLinkClick}
                   >
                     /Contact me
@@ -180,7 +181,11 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
 
         {/* Bouton "Work with me" à droite */}
         <div className="ml-4 hidden lg:block">
-          <Button href="#contact" ariaLabel="Contacter Julien Medina">
+          <Button
+            href="#contact"
+            ariaLabel="Contacter Julien Medina"
+            variant="outline"
+          >
             /Contact me
           </Button>
         </div>

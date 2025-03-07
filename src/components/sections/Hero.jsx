@@ -112,6 +112,7 @@ const Hero = ({ isNavOpen }) => {
                 href="#contact"
                 className="z-10 rounded-sm"
                 ariaLabel="Contacter Julien Medina"
+                variant="outline"
               >
                 /Work with me
               </Button>

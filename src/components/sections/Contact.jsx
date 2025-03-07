@@ -71,14 +71,14 @@ const ContactSection = () => {
             <img
               src={BigStar}
               alt="Grande étoile décorative"
-              className="absolute sm:left-[-40px] sm:top-0  mobile-lg:left-[10px] mobile-sm:hidden mobile-lg:block md:w-6 lg:w-8 "
+              className="absolute mobile-sm:hidden mobile-lg:left-[10px]  mobile-lg:block sm:left-[-40px] sm:top-0 md:w-6 lg:w-8 "
               aria-hidden="true"
             />
             {/* Petite étoile */}
             <img
               src={SmallStar}
               alt="Petite étoile décorative"
-              className="absolute sm:left-[-25px] sm:top-[-10px]  w-4 mobile-sm:hidden mobile-lg:block mobile-lg:left-[30px] md:w-6 lg:w-5"
+              className="absolute w-4 mobile-sm:hidden  mobile-lg:left-[30px] mobile-lg:block sm:left-[-25px] sm:top-[-10px] md:w-6 lg:w-5"
               aria-hidden="true"
             />
             {/* Titre */}
@@ -98,6 +98,7 @@ const ContactSection = () => {
             <Button
               href="mailto:julien.medina16@gmail.com"
               ariaLabel="Contacter Julien Medina"
+              variant="outline"
             >
               /Send me an email
             </Button>

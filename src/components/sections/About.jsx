@@ -91,7 +91,11 @@ const About = () => {
               in the tech industry.
             </p>
             <div className="mt-8 flex justify-center md:justify-start ">
-              <Button href={CV} ariaLabel="Télécharger le CV de Julien Medina">
+              <Button
+                href={CV}
+                ariaLabel="Télécharger le CV de Julien Medina"
+                variant="outline"
+              >
                 Download resume
               </Button>
             </div>

@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import Portfolio from "../../assets/images/Portfolio.webp";
 import CardBackground from "../../assets/images/CardBackground.webp";
 import ArtPortfolio from "../../assets/images/ArtPortfolio.webp";
+import Dashboard from "../../assets/images/Dashboard.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,29 +99,42 @@ const Projects = () => {
 
         {/* Contenu des cartes */}
         <div
-          className="flex flex-col items-center gap-8 py-8 md:flex-row md:items-start md:justify-center md:px-8 lg:px-12 xl:py-16"
+          className="flex flex-col items-stretch gap-8 py-8 md:flex-row md:items-stretch md:justify-center md:px-8 lg:px-12 xl:py-16"
           ref={cardRef}
         >
           <Card
+            className="h-full"
             image={Portfolio}
             title="My Portfolio"
-            description="This portfolio showcases my skills in modern web technologies, highlighting my best projects and design concepts. Built with React, Tailwind, and animated with GSAP, it reflects my passion for creating clean, responsive web applications."
+            description="A modern, interactive portfolio showcasing my best web projects and design concepts. Built with React, styled using Tailwind CSS, and animated with GSAP, it reflects my passion for clean code and responsive design."
             buttonText="View on GitHub"
             buttonLink="https://github.com/JulienMedina/Portfolio"
           />
           <Card
+            className="h-full"
             image={CardBackground}
-            title="Final Project – DWWM Certification"
-            description="A collaborative web platform designed to connect players based on their preferences and availability. Presented during my DWWM certification, I contributed significantly to the back-end, managing player interactions, server architecture, and a dedicated API."
+            title="API"
+            description="A collaborative platform connecting players based on their preferences and availability. I developed the back-end, built a RESTful API, managed server architecture, and ensured smooth user interactions. Presented as my final DWWM certification project."
             buttonText="View on GitHub"
             buttonLink="https://github.com/JulienMedina/DWWM-back"
           />
           <Card
+            className="h-full"
             image={ArtPortfolio}
             title="Artist Portfolio"
-            description="A modern showcase website designed to highlight an artist's work and exhibitions. I built the back-end with Strapi and developed a Next.js front-end featuring dynamic galleries, GSAP animations, and a Nodemailer-powered contact form."
+            description="A modern website highlighting an artist's portfolio and exhibitions. Developed with a Strapi back-end and a Next.js front-end featuring dynamic galleries, smooth GSAP animations, and an integrated contact form powered by Nodemailer."
             buttonText="View on GitHub"
             buttonLink="https://github.com/Charlie-Gauvin/art-porfolio-frontend"
+            demoLink="https://www.patrickgauvinart.com/"
+          />
+          <Card
+            className="h-full"
+            image={Dashboard}
+            title="Dashboard"
+            description="This project is a solution for Frontend Mentor's Time Tracking Dashboard  challenge. It’s an interactive dashboard displaying activity stats with filters for daily, weekly, and monthly data."
+            buttonText="View on GitHub"
+            buttonLink="https://github.com/JulienMedina/time-tracking-dashboard"
+            demoLink="https://julienmedina.github.io/time-tracking-dashboard/"
           />
         </div>
 
