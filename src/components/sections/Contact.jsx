@@ -54,7 +54,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative flex items-center justify-center bg-black text-grayDark-12 md:min-h-screen"
+      className="relative flex items-center justify-center bg-grayDark-1 text-grayDark-12 md:min-h-screen"
     >
       <div className="container relative mx-auto flex flex-col items-center justify-center px-4 md:flex-row md:items-start md:justify-between md:px-20">
         <div
@@ -79,7 +79,7 @@ const ContactSection = () => {
             </h2>
           </div>
           <p className="mt-4 text-center text-lg text-grayDark-11 md:text-left">
-            Envoyez-moi un message et créons ensemble quelque chose d'incroyable
+            Envoyez-moi un message et créons ensemble quelque chose d’incroyable
             !
           </p>
           <div

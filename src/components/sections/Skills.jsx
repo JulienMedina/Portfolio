@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef } from "react";
 import Divider from "../../assets/svg/Divider.svg";
 import Badge from "../base/Badge";
 import { gsap } from "gsap";

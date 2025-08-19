@@ -74,18 +74,18 @@ const About = () => {
             <p className="mb-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
               Ancien militaire reconverti dans le développement web, je suis
               aujourd&apos;hui développeur web junior spécialisé en JavaScript,
-              React, Node.js et Tailwind CSS. Fraîchement diplômé de l'école
-              O'clock, je conçois des applications web modernes, performantes et
+              React, Node.js et Tailwind CSS. Fraîchement diplômé de l’école
+              O’clock, je conçois des applications web modernes, performantes et
               animées grâce à GSAP.
             </p>
             <p className="text-center font-sans text-lg text-grayDark-11 md:text-left">
-              Mon parcours atypique m'a permis de développer une forte capacité
+              Mon parcours atypique m’a permis de développer une forte capacité
               d&apos;adaptation, une grande rigueur et un goût prononcé pour le
               travail bien fait. Je suis curieux, autonome et toujours en veille
-              sur les dernières tendances du web et de l'IA.
+              sur les dernières tendances du web et de l’IA.
             </p>
             <p className="mt-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
-              Actuellement à la recherche d'opportunités pour mettre mes
+              Actuellement à la recherche d’opportunités pour mettre mes
               compétences à profit, je suis disponible pour échanger sur vos
               projets web ou collaborer ensemble sur des idées innovantes.
             </p>
