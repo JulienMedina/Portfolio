@@ -7,6 +7,7 @@ export default function Button({
   onClick,
   variant = "filled",
   className = "",
+  type = "button",
 }) {
   const baseClasses =
     "z-10 rounded-sm px-2 py-1.5 font-mono transition-colors duration-300 text-center";
@@ -17,15 +18,26 @@ export default function Button({
       "bg-transparent text-grayDark-12 border border-grayDark-7 hover:bg-grayDark-7",
   };
 
+  if (href) {
+    return (
+      <a
+        href={href}
+        aria-label={ariaLabel}
+        className={`${baseClasses} ${variants[variant]} ${className}`}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
-    <a
-      href={href}
+    <button
+      type={type}
       aria-label={ariaLabel}
       onClick={onClick}
       className={`${baseClasses} ${variants[variant]} ${className}`}
     >
       {children}
-    </a>
+    </button>
   );
 }
 
@@ -35,5 +47,6 @@ Button.propTypes = {
   ariaLabel: PropTypes.string,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(["filled", "outline"]),
-  className: PropTypes.string, // Ajout de className pour la flexibilité externe
+  className: PropTypes.string,
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
 };
