@@ -83,7 +83,7 @@ const SkillsSection = React.memo(function SkillsSection() {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-grayDark-1 py-12 text-grayDark-12"
+      className="min-h-screen bg-gray-dark-1 py-12 text-gray-dark-12"
     >
       <div className="container mx-auto px-20">
         <h2
@@ -95,7 +95,7 @@ const SkillsSection = React.memo(function SkillsSection() {
 
         {/* Front-end skills */}
         <div className="mb-8">
-          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Front-end</h3>
+          <h3 className="mb-4 text-lg font-bold text-gray-dark-11">Front-end</h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {frontEndSkills.map((skill) => (
               <Badge
@@ -120,7 +120,7 @@ const SkillsSection = React.memo(function SkillsSection() {
 
         {/* Back-end skills */}
         <div className="mb-8 text-left">
-          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Back-end</h3>
+          <h3 className="mb-4 text-lg font-bold text-gray-dark-11">Back-end</h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {backEndSkills.map((skill) => (
               <Badge
@@ -145,7 +145,7 @@ const SkillsSection = React.memo(function SkillsSection() {
 
         {/* Outils */}
         <div className="mb-8">
-          <h3 className="mb-4 text-lg font-bold text-grayDark-11">Outils</h3>
+          <h3 className="mb-4 text-lg font-bold text-gray-dark-11">Outils</h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             {tools.map((tool) => (
               <Badge
@@ -170,7 +170,7 @@ const SkillsSection = React.memo(function SkillsSection() {
 
         {/* Soft Skills */}
         <div className="mb-8">
-          <h3 className="mb-4 text-lg font-bold text-grayDark-11">
+          <h3 className="mb-4 text-lg font-bold text-gray-dark-11">
             Compétences personnelles
           </h3>
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
