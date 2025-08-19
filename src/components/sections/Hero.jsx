@@ -30,7 +30,7 @@ const Hero = ({ isNavOpen }) => {
     <section
       aria-labelledby="hero-title"
       className={`relative flex h-screen flex-col items-center 
-                  bg-gray-dark-1 text-gray-dark-12 
+                  overflow-hidden bg-gray-dark-1 text-gray-dark-12 
                   transition-opacity duration-1000 ease-in-out 
                   md:justify-center 
                   ${loaded ? "opacity-100" : "opacity-0"}`}
@@ -56,7 +56,7 @@ const Hero = ({ isNavOpen }) => {
         className="absolute left-0 top-0 w-48 md:w-64 lg:w-96"
       />
       {!isNavOpen && (
-        <div className="container relative mx-auto px-4 pt-64 md:pt-24 lg:pt-32">
+        <div className="@container container mx-auto px-4 pt-64 md:pt-24 lg:pt-32">
           <h1
             id="hero-title"
             className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-gray-dark-11 md:text-6xl"
@@ -93,7 +93,7 @@ const Hero = ({ isNavOpen }) => {
               </Button>
             </div>
           )}
-          <div className="relative -bottom-40 flex justify-center">
+          <div className="absolute bottom-20 left-1/2 z-20 -translate-x-1/2 flex justify-center md:bottom-10 lg:bottom-12 pointer-events-none">
             <span className="animate-pulse rounded-xs border border-gray-dark-12 px-4 py-1 text-sm text-gray-dark-12">
               Scroll
             </span>
