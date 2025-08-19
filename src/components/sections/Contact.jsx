@@ -54,7 +54,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative flex items-center justify-center bg-grayDark-1 text-grayDark-12 md:min-h-screen"
+      className="relative flex items-center justify-center bg-gray-dark-1 text-gray-dark-12 md:min-h-screen"
     >
       <div className="container relative mx-auto flex flex-col items-center justify-center px-4 md:flex-row md:items-start md:justify-between md:px-20">
         <div
@@ -74,11 +74,11 @@ const ContactSection = () => {
               className="absolute w-4 mobile-sm:hidden mobile-lg:left-[30px] mobile-lg:block sm:left-[-25px] sm:top-[-10px] md:w-6 lg:w-5"
               aria-hidden="true"
             />
-            <h2 className="text-center text-3xl font-semibold text-grayDark-12 md:text-left md:text-5xl">
+            <h2 className="text-center text-3xl font-semibold text-gray-dark-12 md:text-left md:text-5xl">
               Une idée de projet ?
             </h2>
           </div>
-          <p className="mt-4 text-center text-lg text-grayDark-11 md:text-left">
+          <p className="mt-4 text-center text-lg text-gray-dark-11 md:text-left">
             Envoyez-moi un message et créons ensemble quelque chose d’incroyable
             !
           </p>

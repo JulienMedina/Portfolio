@@ -68,7 +68,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="works" className="bg-grayDark-1 text-grayDark-12">
+    <section id="works" className="bg-gray-dark-1 text-gray-dark-12">
       <div className="container mx-auto px-4 py-8 xl:pl-16">
         <div
           className="mb-8 flex items-center justify-center pr-12 md:justify-start"
@@ -88,7 +88,7 @@ const Projects = () => {
               aria-hidden="true"
             />
           </div>
-          <h2 className="text-center font-sans text-2xl font-semibold text-grayDark-12 md:text-left md:text-4xl">
+          <h2 className="text-center font-sans text-2xl font-semibold text-gray-dark-12 md:text-left md:text-4xl">
             Mes projets
           </h2>
         </div>

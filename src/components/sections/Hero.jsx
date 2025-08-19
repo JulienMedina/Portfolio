@@ -30,7 +30,7 @@ const Hero = ({ isNavOpen }) => {
     <section
       aria-labelledby="hero-title"
       className={`relative flex h-screen flex-col items-center 
-                  bg-grayDark-1 text-grayDark-12 
+                  bg-gray-dark-1 text-gray-dark-12 
                   transition-opacity duration-1000 ease-in-out 
                   md:justify-center 
                   ${loaded ? "opacity-100" : "opacity-0"}`}
@@ -59,7 +59,7 @@ const Hero = ({ isNavOpen }) => {
         <div className="container relative mx-auto px-4 pt-64 md:pt-24 lg:pt-32">
           <h1
             id="hero-title"
-            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-grayDark-11 md:text-6xl"
+            className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-gray-dark-11 md:text-6xl"
           >
             {splittedWords.map((letters, wordIndex) => (
               <span
@@ -78,14 +78,14 @@ const Hero = ({ isNavOpen }) => {
               </span>
             ))}
           </h1>
-          <p className="relative z-20 mb-6 text-center font-mono text-lg text-grayDark-11 md:text-2xl">
+          <p className="relative z-20 mb-6 text-center font-mono text-lg text-gray-dark-11 md:text-2xl">
             basé à Paris, France
           </p>
           {!isNavOpen && (
             <div className="flex justify-center">
               <Button
                 href="#contact"
-                className="z-10 rounded-sm"
+                className="z-10 rounded-xs"
                 ariaLabel="Contacter Julien Medina"
                 variant="outline"
               >
@@ -94,7 +94,7 @@ const Hero = ({ isNavOpen }) => {
             </div>
           )}
           <div className="relative -bottom-40 flex justify-center">
-            <span className="animate-pulse rounded-sm border border-grayDark-12 px-4 py-1 text-sm text-grayDark-12">
+            <span className="animate-pulse rounded-xs border border-gray-dark-12 px-4 py-1 text-sm text-gray-dark-12">
               Scroll
             </span>
           </div>

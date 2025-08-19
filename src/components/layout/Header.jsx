@@ -20,13 +20,13 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-grayDark-12 bg-black"
+      className="sticky top-0 z-50 w-full border-b border-gray-dark-12 bg-black"
       role="banner"
     >
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
-          className="font-mono text-xl text-grayDark-12"
+          className="font-mono text-xl text-gray-dark-12"
           aria-label="Initiales JM"
         >
           Julien Medina
@@ -66,13 +66,13 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
 
             {isNavOpen && (
               <div
-                className="fixed inset-0 z-40 bg-grayDark-1 opacity-50"
+                className="fixed inset-0 z-40 bg-gray-dark-1 opacity-50"
                 onClick={() => setIsNavOpen(false)}
               />
             )}
 
             <div
-              className={`absolute left-0 top-12 z-50 h-screen w-full bg-black text-grayDark-12 transition-transform duration-1000 ease-in-out ${
+              className={`absolute left-0 top-12 z-50 h-screen w-full bg-black text-gray-dark-12 transition-transform duration-1000 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
             >
@@ -137,7 +137,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
             <li>
               <a
                 href="#hero-title"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-gray-dark-12 transition-colors duration-300 hover:text-gray-dark-4"
                 aria-label="Accueil"
               >
                 /Accueil
@@ -146,7 +146,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
             <li>
               <a
                 href="#about"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-gray-dark-12 transition-colors duration-300 hover:text-gray-dark-4"
                 aria-label="À propos"
               >
                 /À propos
@@ -155,7 +155,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
             <li>
               <a
                 href="#works"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-gray-dark-12 transition-colors duration-300 hover:text-gray-dark-4"
                 aria-label="Projets"
               >
                 /Projets
@@ -164,7 +164,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
             <li>
               <a
                 href="#skills"
-                className="font-sans text-grayDark-12 transition-colors duration-300 hover:text-grayDark-4"
+                className="font-sans text-gray-dark-12 transition-colors duration-300 hover:text-gray-dark-4"
                 aria-label="Compétences"
               >
                 /Compétences

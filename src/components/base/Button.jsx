@@ -10,12 +10,12 @@ export default function Button({
   type = "button",
 }) {
   const baseClasses =
-    "z-10 rounded-sm px-2 py-1.5 font-mono transition-colors duration-300 text-center";
+    "z-10 rounded-xs px-2 py-1.5 font-mono transition-colors duration-300 text-center";
   const variants = {
     filled:
-      "bg-grayDark-7 text-grayDark-1 hover:bg-grayDark-9 border border-transparent",
+      "bg-gray-dark-7 text-gray-dark-1 hover:bg-gray-dark-9 border border-transparent",
     outline:
-      "bg-transparent text-grayDark-12 border border-grayDark-7 hover:bg-grayDark-7",
+      "bg-transparent text-gray-dark-12 border border-gray-dark-7 hover:bg-gray-dark-7",
   };
 
   if (href) {
@@ -46,7 +46,7 @@ Button.propTypes = {
   href: PropTypes.string,
   ariaLabel: PropTypes.string,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["filled", "outline"]),
+  variant: PropTypes.oneOf(["filled", "outline-solid"]),
   className: PropTypes.string,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
 };

@@ -49,7 +49,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="flex min-h-screen flex-col items-center justify-center bg-grayDark-1 py-12 text-grayDark-12"
+      className="flex min-h-screen flex-col items-center justify-center bg-gray-dark-1 py-12 text-gray-dark-12"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center md:flex-row md:space-x-12">
@@ -60,7 +60,7 @@ const About = () => {
             <img
               src={ProfilePicture}
               alt="Portrait de Julien Medina"
-              className="h-80 w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:h-[30rem] md:w-2/3 lg:w-1/2"
+              className="h-80 w-3/4 rounded-md object-cover shadow-lg transition-transform duration-500 hover:scale-105 md:h-120 md:w-2/3 lg:w-1/2"
             />
           </div>
 
@@ -71,20 +71,20 @@ const About = () => {
             <h2 className="mb-4 text-center font-sans text-3xl font-semibold md:text-left">
               À propos de moi
             </h2>
-            <p className="mb-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
+            <p className="mb-4 text-center font-sans text-lg text-gray-dark-11 md:text-left">
               Ancien militaire reconverti dans le développement web, je suis
               aujourd&apos;hui développeur web junior spécialisé en JavaScript,
               React, Node.js et Tailwind CSS. Fraîchement diplômé de l’école
               O’clock, je conçois des applications web modernes, performantes et
               animées grâce à GSAP.
             </p>
-            <p className="text-center font-sans text-lg text-grayDark-11 md:text-left">
+            <p className="text-center font-sans text-lg text-gray-dark-11 md:text-left">
               Mon parcours atypique m’a permis de développer une forte capacité
               d&apos;adaptation, une grande rigueur et un goût prononcé pour le
               travail bien fait. Je suis curieux, autonome et toujours en veille
               sur les dernières tendances du web et de l’IA.
             </p>
-            <p className="mt-4 text-center font-sans text-lg text-grayDark-11 md:text-left">
+            <p className="mt-4 text-center font-sans text-lg text-gray-dark-11 md:text-left">
               Actuellement à la recherche d’opportunités pour mettre mes
               compétences à profit, je suis disponible pour échanger sur vos
               projets web ou collaborer ensemble sur des idées innovantes.
