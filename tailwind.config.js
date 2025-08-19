@@ -42,7 +42,7 @@ export default {
       },
     },
   },
-  plugins: [
-    daisyui, // Import du plugin DaisyUI correctement
-  ],
+  // plugins: [
+  //   daisyui, // Import du plugin DaisyUI correctement
+  // ],
 };
