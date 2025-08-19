@@ -68,8 +68,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="works" className="bg-gray-dark-1 text-gray-dark-12">
-      <div className="container mx-auto px-4 py-8 xl:pl-16">
+    <section
+      id="works"
+      className="bg-gray-dark-1 text-gray-dark-12 scroll-mt-20 md:scroll-mt-24"
+    >
+      <div className="@container container mx-auto px-4 py-8 xl:pl-16">
         <div
           className="mb-8 flex items-center justify-center pr-12 md:justify-start"
           ref={textRef}
@@ -94,7 +97,7 @@ const Projects = () => {
         </div>
 
         <div
-          className="flex flex-col items-stretch gap-8 py-8 md:flex-row md:items-stretch md:justify-center md:px-8 lg:px-12 xl:py-16"
+          className="@container flex flex-col items-stretch gap-8 py-8 md:flex-row md:items-stretch md:justify-center md:px-8 lg:px-12 xl:py-16 @md:flex-row @md:items-stretch @md:justify-center @md:px-8 @lg:px-12 @xl:py-16"
           ref={cardRef}
         >
           <Card

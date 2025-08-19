@@ -23,7 +23,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
       className="sticky top-0 z-50 w-full border-b border-gray-dark-12 bg-black"
       role="banner"
     >
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="@container container mx-auto flex items-center justify-between p-4">
         {/* Initiales à gauche */}
         <div
           className="font-mono text-xl text-gray-dark-12"
