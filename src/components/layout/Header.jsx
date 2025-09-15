@@ -1,18 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Button from "../base/Button";
 
 const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
+  const firstLinkRef = useRef(null);
+
   useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setIsNavOpen(false);
+    };
     if (isNavOpen) {
       document.body.classList.add("overflow-hidden");
+      document.addEventListener("keydown", onKeyDown);
+      setTimeout(() => {
+        try {
+          firstLinkRef.current && firstLinkRef.current.focus();
+        } catch {}
+      }, 0);
     } else {
       document.body.classList.remove("overflow-hidden");
+      document.removeEventListener("keydown", onKeyDown);
     }
     return () => {
       document.body.classList.remove("overflow-hidden");
+      document.removeEventListener("keydown", onKeyDown);
     };
-  }, [isNavOpen]);
+  }, [isNavOpen, setIsNavOpen]);
 
   const handleLinkClick = () => {
     setIsNavOpen(false);
@@ -35,8 +48,12 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
         {/* Navigation pour mobile */}
         <nav>
           <section className="flex lg:hidden">
-            <div
+            <button
+              type="button"
               className="z-50 cursor-pointer space-y-2"
+              aria-controls="mobile-nav"
+              aria-expanded={isNavOpen}
+              aria-label={isNavOpen ? "Fermer le menu" : "Ouvrir le menu"}
               onClick={() => setIsNavOpen((prev) => !prev)}
             >
               {!isNavOpen ? (
@@ -62,7 +79,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                   />
                 </svg>
               )}
-            </div>
+            </button>
 
             {isNavOpen && (
               <div
@@ -72,6 +89,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
             )}
 
             <div
+              id="mobile-nav"
               className={`absolute left-0 top-12 z-50 h-screen w-full bg-black text-gray-dark-12 transition-transform duration-1000 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
@@ -82,6 +100,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     href="#hero-title"
                     className="text-xl"
                     onClick={handleLinkClick}
+                    ref={firstLinkRef}
                   >
                     /Accueil
                   </a>

@@ -12,7 +12,8 @@ const About = () => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
       {
@@ -28,7 +29,7 @@ const About = () => {
       }
     );
 
-    gsap.fromTo(
+      gsap.fromTo(
       imgRef.current,
       { opacity: 0, y: 50 },
       {
@@ -44,6 +45,8 @@ const About = () => {
         },
       }
     );
+    });
+    return () => ctx.revert();
   }, []);
 
   return (

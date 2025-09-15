@@ -18,7 +18,8 @@ const Projects = () => {
   const lineRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
       cardRef.current.children,
       { opacity: 0, x: -50 },
       {
@@ -35,7 +36,7 @@ const Projects = () => {
       }
     );
 
-    gsap.fromTo(
+      gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
       {
@@ -51,7 +52,7 @@ const Projects = () => {
       }
     );
 
-    gsap.fromTo(
+      gsap.fromTo(
       lineRef.current,
       { scaleX: 0, transformOrigin: "center" },
       {
@@ -65,6 +66,8 @@ const Projects = () => {
         },
       }
     );
+    });
+    return () => ctx.revert();
   }, []);
 
   return (

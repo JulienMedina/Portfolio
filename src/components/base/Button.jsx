@@ -8,6 +8,8 @@ export default function Button({
   variant = "filled",
   className = "",
   type = "button",
+  target,
+  rel,
 }) {
   const baseClasses =
     "z-10 rounded-xs px-2 py-1.5 font-mono transition-colors duration-300 text-center";
@@ -24,6 +26,8 @@ export default function Button({
         href={href}
         aria-label={ariaLabel}
         className={`${baseClasses} ${variants[variant]} ${className}`}
+        target={target}
+        rel={rel}
       >
         {children}
       </a>
@@ -46,7 +50,9 @@ Button.propTypes = {
   href: PropTypes.string,
   ariaLabel: PropTypes.string,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["filled", "outline-solid"]),
+  variant: PropTypes.oneOf(["filled", "outline"]),
   className: PropTypes.string,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
+  target: PropTypes.string,
+  rel: PropTypes.string,
 };

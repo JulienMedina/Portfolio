@@ -46,7 +46,8 @@ const SkillsSection = React.memo(function SkillsSection() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    lineRefs.current.forEach((line) => {
+    const ctx = gsap.context(() => {
+      lineRefs.current.forEach((line) => {
       gsap.fromTo(
         line,
         { scaleX: 0, transformOrigin: "center" },
@@ -63,7 +64,7 @@ const SkillsSection = React.memo(function SkillsSection() {
       );
     });
 
-    gsap.fromTo(
+      gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
       {
@@ -78,6 +79,8 @@ const SkillsSection = React.memo(function SkillsSection() {
         },
       }
     );
+    });
+    return () => ctx.revert();
   }, []);
 
   return (
