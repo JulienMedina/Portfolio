@@ -4,27 +4,24 @@ import { gsap } from "gsap";
 import Button from "../base/Button";
 import Ellipse from "../../assets/svg/Ellipse.min.svg";
 import DiagonalLinesSVG from "../../assets/svg/Group.min.svg";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 const LazyHeroScene = lazy(() => import("../layout/HeroScene"));
 
 const Hero = ({ isNavOpen }) => {
   const [loaded, setLoaded] = useState(false);
-  const lettersRef = useRef([]);
-  lettersRef.current = [];
-  const splittedWords = ["Full", "stack", "web", "developer"].map((word) =>
-    word.split("")
-  );
+  const containerRef = useRef(null);
+  const reducedMotion = usePrefersReducedMotion();
+  const splittedWords = ["Full", "stack", "web", "developer"].map((word) => word.split(""));
 
   useEffect(() => {
     setLoaded(true);
-    gsap.set(lettersRef.current, { y: "100%" });
-    gsap.to(lettersRef.current, {
-      y: "0%",
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.03,
-    });
-  }, []);
+    if (reducedMotion) return;
+    const letters = containerRef.current?.querySelectorAll('[data-letter=true]');
+    if (!letters?.length) return;
+    gsap.set(letters, { y: "100%" });
+    gsap.to(letters, { y: "0%", duration: 1, ease: "power2.out", stagger: 0.03 });
+  }, [reducedMotion]);
 
   return (
     <section
@@ -36,12 +33,12 @@ const Hero = ({ isNavOpen }) => {
     >
       <Suspense fallback={<div>Chargement de la scène 3D...</div>}>
         <div className="absolute inset-0 z-0">
-          <LazyHeroScene />
+          <LazyHeroScene reducedMotion={reducedMotion} />
         </div>
       </Suspense>
       <img
         src={Ellipse}
-        alt="Ellipse décorative"
+        alt=""
         aria-hidden="true"
         width="1200"
         height="800"
@@ -50,8 +47,9 @@ const Hero = ({ isNavOpen }) => {
       />
       <img
         src={DiagonalLinesSVG}
-        alt="Lignes diagonales décoratives"
+        alt=""
         loading="lazy"
+        aria-hidden="true"
         className="absolute left-0 top-0 w-48 md:w-64 lg:w-96"
       />
       {!isNavOpen && (
@@ -59,6 +57,7 @@ const Hero = ({ isNavOpen }) => {
           <h1
             id="hero-title"
             className="relative z-20 mb-4 text-center font-sans text-4xl font-bold text-gray-dark-11 md:text-6xl"
+            ref={containerRef}
           >
             {splittedWords.map((letters, wordIndex) => (
               <span
@@ -68,7 +67,7 @@ const Hero = ({ isNavOpen }) => {
                 {letters.map((letter, letterIndex) => (
                   <span
                     key={letterIndex}
-                    ref={(el) => lettersRef.current.push(el)}
+                    data-letter="true"
                     className="inline-block"
                   >
                     {letter}

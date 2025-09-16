@@ -13,6 +13,19 @@
       content="portfolio, développeur web, full stack, react, JavaScript, Nodejs, Express, Docker, portfolio"
     />
     <meta name="author" content="Julien Medina" />
+    <link rel="canonical" href="https://julienmedina.com/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Julien Medina | Portfolio" />
+    <meta property="og:description" content="Portfolio de Julien Medina, développeur web full stack. Découvrez mes projets et mes compétences." />
+    <meta property="og:url" content="https://julienmedina.com/" />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Julien Medina | Portfolio" />
+    <meta name="twitter:description" content="Portfolio de Julien Medina, développeur web full stack." />
+    <meta name="twitter:image" content="/favicon.svg" />
     <title>Julien Medina | Portfolio</title>
     <link
       rel="preload"
@@ -31,6 +44,19 @@
   </head>
   <body class="bg-gray-dark-1">
     <div class="w-full" id="root"></div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Julien Medina",
+        "url": "https://julienmedina.com/",
+        "jobTitle": "Développeur web full stack",
+        "sameAs": [
+          "https://github.com/JulienMedina",
+          "https://www.linkedin.com/in/julien-m-269497236/"
+        ]
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

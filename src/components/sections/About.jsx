@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../base/Button";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,10 @@ const About = () => {
   const imgRef = useRef(null);
   const textRef = useRef(null);
 
+  const reducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (reducedMotion) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
       textRef.current,
@@ -47,7 +51,7 @@ const About = () => {
     );
     });
     return () => ctx.revert();
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <section

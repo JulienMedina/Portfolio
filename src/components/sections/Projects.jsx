@@ -5,6 +5,7 @@ import Vector from "../../assets/svg/Vector.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import Portfolio from "../../assets/images/Portfolio.webp";
 import CardBackground from "../../assets/images/CardBackground.webp";
 import ArtPortfolio from "../../assets/images/ArtPortfolio.webp";
@@ -17,7 +18,10 @@ const Projects = () => {
   const textRef = useRef(null);
   const lineRef = useRef(null);
 
+  const reducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (reducedMotion) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
       cardRef.current.children,
@@ -68,7 +72,7 @@ const Projects = () => {
     );
     });
     return () => ctx.revert();
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <section
@@ -83,13 +87,13 @@ const Projects = () => {
           <div className="relative mr-3 w-8 md:w-12 md:pl-4 lg:w-16 lg:pl-8">
             <img
               src={PortalG}
-              alt="Grande étoile décorative"
+              alt=""
               className="absolute left-[10px] top-[-20px] w-5 sm:left-[28px] sm:w-7"
               aria-hidden="true"
             />
             <img
               src={SmallStar}
-              alt="Petite étoile décorative"
+              alt=""
               className="absolute left-[20px] top-[-25px] w-1/3 sm:left-[20px] md:left-[49px]"
               aria-hidden="true"
             />
@@ -141,7 +145,7 @@ const Projects = () => {
 
         <img
           src={Vector}
-          alt="Ligne décorative"
+          alt=""
           ref={lineRef}
           className="relative mx-auto mt-10 h-[3px] w-full max-w-[95%] sm:max-w-[90%] md:max-w-[90%] lg:max-w-full"
           aria-hidden="true"

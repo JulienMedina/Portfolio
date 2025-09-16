@@ -3,9 +3,11 @@ import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 export default function Stars(props) {
   const ref = useRef();
+  const reducedMotion = props.reducedMotion ?? usePrefersReducedMotion();
 
   // Générer positions en 3D ou 2D suivant ce que tu veux (inSphere, inCircle…)
   const positions = useMemo(() => {
@@ -13,8 +15,8 @@ export default function Stars(props) {
   }, []);
 
   useFrame((state, delta) => {
+    if (reducedMotion) return;
     if (ref.current) {
-      // Petit mouvement
       ref.current.rotation.x -= delta * 0.02;
       ref.current.rotation.y -= delta * 0.03;
     }

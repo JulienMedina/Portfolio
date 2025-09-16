@@ -3,6 +3,7 @@ import Divider from "../../assets/svg/Divider.svg";
 import Badge from "../base/Badge";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +46,10 @@ const SkillsSection = React.memo(function SkillsSection() {
   const lineRefs = useRef([]);
   const textRef = useRef(null);
 
+  const reducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (reducedMotion) return;
     const ctx = gsap.context(() => {
       lineRefs.current.forEach((line) => {
       gsap.fromTo(
@@ -81,7 +85,7 @@ const SkillsSection = React.memo(function SkillsSection() {
     );
     });
     return () => ctx.revert();
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <section
@@ -114,7 +118,7 @@ const SkillsSection = React.memo(function SkillsSection() {
         {/* Ligne décorative */}
         <img
           src={Divider}
-          alt="Ligne décorative"
+          alt=""
           ref={(el) => (lineRefs.current[0] = el)}
           className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
           aria-hidden="true"
@@ -139,7 +143,7 @@ const SkillsSection = React.memo(function SkillsSection() {
         {/* Ligne décorative */}
         <img
           src={Divider}
-          alt="Ligne décorative"
+          alt=""
           ref={(el) => (lineRefs.current[1] = el)}
           className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
           aria-hidden="true"
@@ -164,7 +168,7 @@ const SkillsSection = React.memo(function SkillsSection() {
         {/* Ligne décorative */}
         <img
           src={Divider}
-          alt="Ligne décorative"
+          alt=""
           ref={(el) => (lineRefs.current[2] = el)}
           className="my-8 h-auto w-full sm:w-3/4 md:w-1/2 lg:w-full"
           aria-hidden="true"
