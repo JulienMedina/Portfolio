@@ -5,6 +5,7 @@ import Cross from "../../assets/svg/Cross.svg";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +13,10 @@ const ContactSection = () => {
   const textRef = useRef(null);
   const buttonRef = useRef(null);
 
+  const reducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (reducedMotion) return;
     const textAnim = gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -50 },
@@ -49,7 +53,7 @@ const ContactSection = () => {
       textAnim.kill();
       buttonAnim.kill();
     };
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <section
@@ -64,13 +68,13 @@ const ContactSection = () => {
           <div className="relative w-full">
             <img
               src={BigStar}
-              alt="Grande étoile décorative"
+              alt=""
               className="absolute mobile-sm:hidden mobile-lg:left-[10px] mobile-lg:block sm:left-[-40px] sm:w-7 md:w-6 lg:w-8"
               aria-hidden="true"
             />
             <img
               src={SmallStar}
-              alt="Petite étoile décorative"
+              alt=""
               className="absolute w-4 mobile-sm:hidden mobile-lg:left-[30px] mobile-lg:block sm:left-[-25px] sm:top-[-10px] md:w-6 lg:w-5"
               aria-hidden="true"
             />
@@ -97,7 +101,7 @@ const ContactSection = () => {
         </div>
         <img
           src={Cross}
-          alt="SVG décoratif"
+          alt=""
           className="hidden w-full max-w-xs opacity-90 md:block md:w-1/2 md:max-w-md lg:max-w-sm xl:max-w-md"
           aria-hidden="true"
         />

@@ -1,18 +1,67 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Button from "../base/Button";
 
 const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
+  const firstLinkRef = useRef(null);
+  const menuRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+
   useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setIsNavOpen(false);
+      if (!isNavOpen) return;
+      if (e.key === "Tab" && menuRef.current) {
+        const focusables = menuRef.current.querySelectorAll(
+          "a[href], button:not([disabled]), [tabindex]:not([tabindex=\"-1\"])"
+        );
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    };
     if (isNavOpen) {
       document.body.classList.add("overflow-hidden");
+      document.addEventListener("keydown", onKeyDown);
+      setTimeout(() => {
+        try {
+          firstLinkRef.current && firstLinkRef.current.focus();
+        } catch {}
+      }, 0);
+      // Masquer le contenu derrière pour SR
+      const main = document.getElementById("main");
+      const footer = document.querySelector("footer");
+      main?.setAttribute("aria-hidden", "true");
+      footer?.setAttribute("aria-hidden", "true");
     } else {
       document.body.classList.remove("overflow-hidden");
+      document.removeEventListener("keydown", onKeyDown);
+      const main = document.getElementById("main");
+      const footer = document.querySelector("footer");
+      main?.removeAttribute("aria-hidden");
+      footer?.removeAttribute("aria-hidden");
+      toggleButtonRef.current?.focus?.();
     }
     return () => {
       document.body.classList.remove("overflow-hidden");
+      document.removeEventListener("keydown", onKeyDown);
+      const main = document.getElementById("main");
+      const footer = document.querySelector("footer");
+      main?.removeAttribute("aria-hidden");
+      footer?.removeAttribute("aria-hidden");
     };
-  }, [isNavOpen]);
+  }, [isNavOpen, setIsNavOpen]);
 
   const handleLinkClick = () => {
     setIsNavOpen(false);
@@ -35,9 +84,14 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
         {/* Navigation pour mobile */}
         <nav>
           <section className="flex lg:hidden">
-            <div
+            <button
+              type="button"
               className="z-50 cursor-pointer space-y-2"
+              aria-controls="mobile-nav"
+              aria-expanded={isNavOpen}
+              aria-label={isNavOpen ? "Fermer le menu" : "Ouvrir le menu"}
               onClick={() => setIsNavOpen((prev) => !prev)}
+              ref={toggleButtonRef}
             >
               {!isNavOpen ? (
                 <>
@@ -62,19 +116,25 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                   />
                 </svg>
               )}
-            </div>
+            </button>
 
             {isNavOpen && (
               <div
                 className="fixed inset-0 z-40 bg-gray-dark-1 opacity-50"
                 onClick={() => setIsNavOpen(false)}
+                aria-hidden="true"
               />
             )}
 
             <div
+              id="mobile-nav"
               className={`absolute left-0 top-12 z-50 h-screen w-full bg-black text-gray-dark-12 transition-transform duration-1000 ease-in-out ${
                 isNavOpen ? "translate-x-0" : "-translate-x-full"
               } flex flex-col items-center justify-center`}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Menu principal"
+              ref={menuRef}
             >
               <ul className="z-50 flex flex-col items-center space-y-4">
                 <li>
@@ -82,6 +142,7 @@ const Header = React.memo(function Header({ isNavOpen, setIsNavOpen }) {
                     href="#hero-title"
                     className="text-xl"
                     onClick={handleLinkClick}
+                    ref={firstLinkRef}
                   >
                     /Accueil
                   </a>

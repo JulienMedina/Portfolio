@@ -33,6 +33,8 @@ const Card = React.memo(function Card({
             ariaLabel={`Lien GitHub pour ${title}`}
             variant="filled"
             className="flex-1 text-center"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {buttonText}
           </Button>
@@ -42,6 +44,8 @@ const Card = React.memo(function Card({
               ariaLabel={`Voir la démo de ${title}`}
               variant="outline"
               className="flex-1 text-center"
+            target="_blank"
+            rel="noopener noreferrer"
             >
               Voir la démo
             </Button>

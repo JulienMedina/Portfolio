@@ -13,11 +13,12 @@ function App() {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-black">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-gray-dark-12 focus:text-black focus:px-3 focus:py-2 focus:rounded-xs">Aller au contenu</a>
       {/* Header */}
       <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
       {/* Main content */}
-      <main className="relative z-10  ">
+      <main id="main" className="relative z-10  ">
         <Hero isNavOpen={isNavOpen} />
         <Projects />
         <About />
